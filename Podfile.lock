@@ -1,0 +1,26 @@
+PODS:
+  - RxCombine (2.0.1):
+    - RxRelay (~> 6)
+    - RxSwift (~> 6)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+
+DEPENDENCIES:
+  - RxCombine
+  - RxSwift
+
+SPEC REPOS:
+  trunk:
+    - RxCombine
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  RxCombine: 74cd98f7bb1d908eff3758d13651917fc296adb3
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+
+PODFILE CHECKSUM: becd3e72ab94179537977477b2a51ac62ec46a55
+
+COCOAPODS: 1.12.0

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "071CA478-92DB-439D-A492-147D68951862"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A3856696-09B4-4692-BE63-873DC76513C6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "projectWithInstagram/Controllers/ContentView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "generateApi()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A3856696-09B4-4692-BE63-873DC76513C6 - 62b78ed5838ecdeb"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;projectWithInstagram.ModelForJsone&gt;) -&gt; () in projectWithInstagram.ContentView.generateApi() -&gt; ()"
+                  moduleName = "projectWithInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artem/Desktop/projectWithInstagram/projectWithInstagram/Controllers/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "88"
+                  endingLineNumber = "88"
+                  offsetFromSymbolStart = "256">
+               </Location>
+               <Location
+                  uuid = "A3856696-09B4-4692-BE63-873DC76513C6 - fd3ea3f0c8292197"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (Swift.String) -&gt; () in projectWithInstagram.ContentView.generateApi() -&gt; ()"
+                  moduleName = "projectWithInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artem/Desktop/projectWithInstagram/projectWithInstagram/Controllers/ContentView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "89"
+                  endingLineNumber = "89"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
