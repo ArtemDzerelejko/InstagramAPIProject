@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "834C68EC-4924-453E-9B4C-89B8D0A8675D"
+   uuid = "682094F9-122E-424B-89BE-CFBFB3D71502"
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0896CDEB-4F0B-471B-97B5-452A3EC5C102"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ProjectWithInstagram/Presentation/Stories/ReelsView/ReelsView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "0896CDEB-4F0B-471B-97B5-452A3EC5C102 - f31e73ed2519b46d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ProjectWithInstagram.ReelsView.body.getter : some"
+                  moduleName = "ProjectWithInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artem/Desktop/projectWithInstagram/ProjectWithInstagram/Presentation/Stories/ReelsView/ReelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "948">
+               </Location>
+               <Location
+                  uuid = "0896CDEB-4F0B-471B-97B5-452A3EC5C102 - 265de22e1b864b40"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 () -&gt; () in ProjectWithInstagram.ReelsView.body.getter : some"
+                  moduleName = "ProjectWithInstagram"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artem/Desktop/projectWithInstagram/ProjectWithInstagram/Presentation/Stories/ReelsView/ReelsView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "136">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
