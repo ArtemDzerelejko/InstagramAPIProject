@@ -58,7 +58,7 @@
 		ACEBDBFF2A1B96AB000DD021 /* FeedRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDBFE2A1B96AB000DD021 /* FeedRepositoryProtocol.swift */; };
 		ACEBDC052A1BACC4000DD021 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC042A1BACC4000DD021 /* APIService.swift */; };
 		ACEBDC072A1CD711000DD021 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC062A1CD711000DD021 /* Image+Extensions.swift */; };
-		ACEBDC152A1F9B30000DD021 /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC142A1F9B30000DD021 /* LoadingModifier.swift */; };
+		ACEBDC152A1F9B30000DD021 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC142A1F9B30000DD021 /* Modifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,7 +119,7 @@
 		ACEBDBFE2A1B96AB000DD021 /* FeedRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepositoryProtocol.swift; sourceTree = "<group>"; };
 		ACEBDC042A1BACC4000DD021 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		ACEBDC062A1CD711000DD021 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
-		ACEBDC142A1F9B30000DD021 /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
+		ACEBDC142A1F9B30000DD021 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -471,7 +471,7 @@
 		ACB89FF32A03DAF300D16062 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				ACEBDC142A1F9B30000DD021 /* LoadingModifier.swift */,
+				ACEBDC142A1F9B30000DD021 /* Modifier.swift */,
 				ACB89FF42A03DC5500D16062 /* TabView */,
 				ACB89FF82A03DF3000D16062 /* InitialTape */,
 				AC00F0242A1799A500DCAE93 /* Search */,
@@ -723,7 +723,7 @@
 				AC05CE5429F85D4A00465A50 /* ProjectWithInstagramApp.swift in Sources */,
 				AC3ADED42A15081000C4BAEB /* StoriesViewFullScreen.swift in Sources */,
 				AC8B38A62A12596A00FB2B10 /* LoaderForStories.swift in Sources */,
-				ACEBDC152A1F9B30000DD021 /* LoadingModifier.swift in Sources */,
+				ACEBDC152A1F9B30000DD021 /* Modifier.swift in Sources */,
 				ACB8A00A2A092D0800D16062 /* SubscribeButton.swift in Sources */,
 				AC00F03E2A17BA9300DCAE93 /* CommentsView.swift in Sources */,
 				ACB8A0062A053F2F00D16062 /* SendMessageButton.swift in Sources */,

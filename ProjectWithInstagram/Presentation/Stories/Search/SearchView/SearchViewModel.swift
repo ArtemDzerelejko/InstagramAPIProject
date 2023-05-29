@@ -3,27 +3,20 @@ import SwiftUI
 import Combine
 
 class SearchViewModel: ObservableObject {
-
+    
     @Published var posts: [DataObject] = []
     @Published var searchValue = ""
     @Published var searchResults: [String] = []
     @Published var apiResult: ModelForJSON?
     @Published var isLoading = false
     @Published var isError = false
-
+    
     private var cancellables = Set<AnyCancellable>()
     private let feedUseCase = FeedUseCase()
-
-//    private let feedServiceRepository: FeedRepositoryProtocol
-//
-//    init(feedServiceRepository: FeedRepositoryProtocol = FeedRepository.shared) {
-//        self.feedServiceRepository = feedServiceRepository
-//    }
-
+    
     func uploadingDataForInstagramFeed() {
-        self.isLoading = true
-        self.feedUseCase.creatingRequestToTheServerToGetInstagramData()
-//        FeedRepository.shared.creatingRequestToTheServerToGetInstagramData()
+        isLoading = true
+        feedUseCase.creatingRequestToTheServerToGetInstagramData()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
@@ -39,7 +32,7 @@ class SearchViewModel: ObservableObject {
                 self?.posts = fetchedPosts
             }.store(in: &cancellables)
     }
-
+    
     func searchInstagramPostsByTag() {
         guard !searchValue.isEmpty else {
             searchResults = []
@@ -47,8 +40,7 @@ class SearchViewModel: ObservableObject {
         }
         isLoading = true
         isError = false
-        self.feedUseCase.searchInstagramPostByTag(searchValue)
-//        feedServiceRepository.searchInstagramPostByTag(searchValue)
+        feedUseCase.searchInstagramPostByTag(searchValue)
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
@@ -63,6 +55,4 @@ class SearchViewModel: ObservableObject {
             }
             .store(in: &cancellables)
     }
-
 }
-

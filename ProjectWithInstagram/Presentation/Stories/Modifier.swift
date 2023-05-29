@@ -77,18 +77,18 @@ struct ImageModifiers: ViewModifier {
 
 extension View {
     func loadingModifier(isLoading: Binding<Bool>) -> some View {
-        self.modifier(LoadingModifier(isLoading: isLoading))
+        modifier(LoadingModifier(isLoading: isLoading))
     }
     
     func stringsModifiers(size: CGFloat? = nil, weight: Font.Weight? = nil, design: Font.Design? = nil, foregroundColor: Color? = nil, paddingEdges: Edge.Set? = nil, paddingLength: CGFloat? = nil, lineLimit: Int? = nil) -> some View {
-        self.modifier(StringsModifiers(size: size, weight: weight, design: design, foregroundColor: foregroundColor, paddingEdges: paddingEdges, paddingLength: paddingLength, lineLimit: lineLimit))
+        modifier(StringsModifiers(size: size, weight: weight, design: design, foregroundColor: foregroundColor, paddingEdges: paddingEdges, paddingLength: paddingLength, lineLimit: lineLimit))
     }
     
     func systemImageModified(size: CGFloat? = nil, weight: Font.Weight? = nil, design: Font.Design? = nil, fontWeight: Font.Weight? = nil, cornerRadius: CGFloat? = nil, foregroundColor: Color? = nil) -> some View {
-        self.modifier(SystemImageModifier( size: size, weight: weight, design: design, fontWeight: fontWeight, cornerRadius: cornerRadius, foregroundColor: foregroundColor))
+        modifier(SystemImageModifier( size: size, weight: weight, design: design, fontWeight: fontWeight, cornerRadius: cornerRadius, foregroundColor: foregroundColor))
     }
     
     func imageModified(aspectRatio: ContentMode? = nil, width: CGFloat? = nil, height: CGFloat? = nil, paddingEdges: Edge.Set? = nil, paddingLength: CGFloat? = nil, size: CGFloat? = nil, weight: Font.Weight? = nil, design: Font.Design? = nil) -> some View {
-        self.modifier(ImageModifiers(aspectRatio: aspectRatio, width: width, height: height, paddingEdges: paddingEdges, paddingLength: paddingLength, size: size, weight: weight, design: design))
+        modifier(ImageModifiers(aspectRatio: aspectRatio, width: width, height: height, paddingEdges: paddingEdges, paddingLength: paddingLength, size: size, weight: weight, design: design))
     }
 }

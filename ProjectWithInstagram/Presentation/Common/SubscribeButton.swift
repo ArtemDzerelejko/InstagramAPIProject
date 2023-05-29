@@ -52,6 +52,7 @@ struct SubscribeButton: View {
                         Button(action: actionForHeartButton) {
                             Image.heartSystem
                                 .font(.system(size: 17, weight: .medium))
+                                .foregroundColor(.black)
                         }
                             .accentColor(accentColorForFollows)
                             .padding(.vertical, -15)

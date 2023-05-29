@@ -13,9 +13,8 @@ class StartViewModel: ObservableObject {
     private let feedUseCase = FeedUseCase()
     
     func uploadingDataForInstagramFeed() {
-        self.isLoading = true
-        self.feedUseCase.creatingRequestToTheServerToGetInstagramData()
-//        FeedRepository.shared.creatingRequestToTheServerToGetInstagramData()
+        isLoading = true
+        feedUseCase.creatingRequestToTheServerToGetInstagramData()
             .receive(on: DispatchQueue.main)
             .sink { [weak self] completion in
                 switch completion {
@@ -30,8 +29,14 @@ class StartViewModel: ObservableObject {
                 guard let fetchedPosts = result.data else { return }
                 self?.posts = fetchedPosts
             }.store(in: &cancellables)
-        
     }
     
+    func likeButtonTapped(for post: DataObject) {}
+    
+    func commentButtonTapped(for post: DataObject) {}
+    
+    func directButtonTapped(for post: DataObject) {}
+    
+    func bookmarkButtonTapped(for post: DataObject) {}
     
 }

@@ -9,62 +9,63 @@ struct LikeView: View {
             
             LazyVStack {
                 
-                Section(header: HStack {
-                    
-                    Text(Strings.thisMonth)
-                        .stringsModifiers(size: 18,
-                                          weight: .heavy,
-                                          foregroundColor: .black)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
-                }) {
-                    ForEach(0..<5) { _ in
-                        SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false)
-                    }
-                }
+                thisMonthSection
+                beforeSection
+                suggestedForYouSection
                 
-                Section(header: HStack {
-                    
-                    Text(Strings.before)
-                        .stringsModifiers(size: 18,
-                                          weight: .heavy,
-                                          foregroundColor: .black)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
-                })
-                {
-                    ForEach(0..<5) { _ in
-                        SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false, accentColorForFollows: .gray)
-                    }
-                }
-                
-                Section(header: HStack {
-                    
-                    Text(Strings.suggestedForYou)
-                        .stringsModifiers(size: 18,
-                                          weight: .heavy,
-                                          foregroundColor: .black)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    Spacer()
-                })
-                {
-                    ForEach(0..<5) { _ in
-                        SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: true)
-                    }
-                }
             }
             .padding(.horizontal)
         }
         .listRowSeparator(.hidden)
-        .navigationBarItems(leading: Text(Strings.notification)
-            .stringsModifiers(size: 25,
-                              weight: .bold,
-                              design: .default,
-                              paddingEdges: .horizontal,
-                              paddingLength: -20)
-           
-        )
+        .navigationBarItems(leading: notificationTitle)
     }
+    
+    private var thisMonthSection: some View {
+        Section(header: sectionHeader(title: Strings.thisMonth)) {
+            ForEach(0..<5) { _ in
+                SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false)
+            }
+        }
+    }
+    
+    private var beforeSection: some View {
+        Section(header: sectionHeader(title: Strings.before)) {
+            ForEach(0..<5) { _ in
+                SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false, accentColorForFollows: .gray)
+            }
+        }
+    }
+    
+    private var suggestedForYouSection: some View {
+        Section(header: sectionHeader(title: Strings.suggestedForYou)) {
+            ForEach(0..<5) { _ in
+                SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: true)
+            }
+        }
+    }
+    
+    
+    
+    private func sectionHeader(title: String) -> some View {
+        HStack {
+            Text(title)
+                .stringsModifiers(size: 18,
+                                  weight: .heavy,
+                                  foregroundColor: .black)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Spacer()
+        }
+    }
+    
+    private var notificationTitle: some View {
+        Text(Strings.notification)
+           .stringsModifiers(size: 25,
+                             weight: .bold,
+                             design: .default,
+                             paddingEdges: .horizontal,
+                             paddingLength: -20)
+    }
+
 }
 
 struct LikeView_Previews: PreviewProvider {
