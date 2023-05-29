@@ -38,7 +38,7 @@ class SearchViewModel: ObservableObject {
             searchResults = []
             return
         }
-        isLoading = true
+        self.isLoading = true
         isError = false
         feedUseCase.searchInstagramPostByTag(searchValue)
             .receive(on: DispatchQueue.main)
