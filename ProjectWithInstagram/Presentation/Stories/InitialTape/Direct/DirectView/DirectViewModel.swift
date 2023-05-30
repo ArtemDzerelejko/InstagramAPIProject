@@ -6,6 +6,6 @@ class DirectViewModel: ObservableObject {
     
     @Published var searchValue = ""
     @Published var searchResults: [String] = []
-
+    
     func searchUsersInDirect() {}
 }

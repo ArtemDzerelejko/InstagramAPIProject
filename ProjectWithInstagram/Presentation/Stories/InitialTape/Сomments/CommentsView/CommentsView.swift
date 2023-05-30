@@ -22,16 +22,16 @@ struct CommentsView: View {
     }
     
     private var navigationLeadingItems: some View {
-           HStack {
-               Button(action: {}) {
-                   Text(Strings.commentsInCapitalLetters)
-                       .foregroundColor(.black)
-                       .font(.system(size: 15, weight: .bold, design: .rounded))
-                       .padding(.horizontal, 100)
-               }
-           }
-           .buttonStyle(.plain)
-       }
+        HStack {
+            Button(action: {}) {
+                Text(Strings.commentsInCapitalLetters)
+                    .foregroundColor(.black)
+                    .font(.system(size: 15, weight: .bold, design: .rounded))
+                    .padding(.horizontal, 100)
+            }
+        }
+        .buttonStyle(.plain)
+    }
     
     private var navigationTrailingItems: some View {
         HStack {

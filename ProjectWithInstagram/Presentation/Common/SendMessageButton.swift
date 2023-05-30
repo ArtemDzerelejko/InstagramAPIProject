@@ -44,7 +44,7 @@ struct SendMessageButton: View {
                     }.buttonStyle(.plain)
                     
                 }
-
+                
             }
         }
         .buttonStyle(.plain)

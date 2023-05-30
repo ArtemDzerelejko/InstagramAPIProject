@@ -71,7 +71,7 @@ struct AddContentView: View {
                     .padding()
             }
             
-            imageOptionsView
+            navigationButtonsWhenAddingNewPost
             
             ScrollView(.vertical, showsIndicators: false) {
                 LazyVGrid(columns: columns, spacing: 0) {
@@ -88,7 +88,7 @@ struct AddContentView: View {
         }
     }
     
-    private var imageOptionsView: some View {
+    private var navigationButtonsWhenAddingNewPost: some View {
         HStack {
             Button(action: {}) {
                 Text(Strings.recent)

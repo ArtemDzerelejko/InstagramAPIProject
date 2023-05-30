@@ -59,13 +59,13 @@ struct LikeView: View {
     
     private var notificationTitle: some View {
         Text(Strings.notification)
-           .stringsModifiers(size: 25,
-                             weight: .bold,
-                             design: .default,
-                             paddingEdges: .horizontal,
-                             paddingLength: -20)
+            .stringsModifiers(size: 25,
+                              weight: .bold,
+                              design: .default,
+                              paddingEdges: .horizontal,
+                              paddingLength: -20)
     }
-
+    
 }
 
 struct LikeView_Previews: PreviewProvider {

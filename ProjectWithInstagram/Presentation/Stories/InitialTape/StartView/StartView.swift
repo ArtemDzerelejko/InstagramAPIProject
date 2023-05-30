@@ -104,19 +104,21 @@ struct StartView: View {
             
             VStack(alignment: .leading) {
                 Text(Strings.numberOfLikes)
-                    .stringsModifiers(size: 15, weight: .medium, design: .default)
+                    .font(.system(size: 15, weight: .medium, design: .default))
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 Text(Strings.nameAcountWithUnderscore + " " + Strings.someInformation)
-                    .stringsModifiers(size: 15, weight: .medium, design: .default)
+                    .font(.system(size: 15, weight: .medium, design: .default))
                 
                 NavigationLink(destination: CommentsView()) {
                     Text(Strings.viewAllCommentsLabel + "( \(Strings.numberOfComments))")
-                        .stringsModifiers(size: 15, weight: .medium, design: .default, foregroundColor: .gray)
+                        .font(.system(size: 15, weight: .medium, design: .default))
+                        .foregroundColor(.gray)
                 }
                 
                 Text(Strings.someTimeAgoLabel)
-                    .stringsModifiers(size: 12, weight: .medium, design: .default, foregroundColor: .gray)
+                    .font(.system(size: 15, weight: .medium, design: .default))
+                    .foregroundColor(.gray)
             }
             .padding(.horizontal, 5)
         }

@@ -29,7 +29,6 @@ struct ReelsPlayer: View {
                         }
                     }
                     
-                    
                     return Color.clear
                 }
                 

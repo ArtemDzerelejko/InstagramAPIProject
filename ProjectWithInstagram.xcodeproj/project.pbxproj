@@ -425,6 +425,7 @@
 			children = (
 				ACB89FDD2A02896800D16062 /* Common */,
 				ACB89FF32A03DAF300D16062 /* Stories */,
+				ACBC67A22A26137B00B1BAFA /* Modifier */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -471,7 +472,6 @@
 		ACB89FF32A03DAF300D16062 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				ACEBDC142A1F9B30000DD021 /* Modifier.swift */,
 				ACB89FF42A03DC5500D16062 /* TabView */,
 				ACB89FF82A03DF3000D16062 /* InitialTape */,
 				AC00F0242A1799A500DCAE93 /* Search */,
@@ -548,6 +548,14 @@
 				ACB8A0552A0A954000D16062 /* Reel-10.mp4 */,
 			);
 			path = Reels;
+			sourceTree = "<group>";
+		};
+		ACBC67A22A26137B00B1BAFA /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				ACEBDC142A1F9B30000DD021 /* Modifier.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		ACEBDC082A1CEC55000DD021 /* CommentsView */ = {

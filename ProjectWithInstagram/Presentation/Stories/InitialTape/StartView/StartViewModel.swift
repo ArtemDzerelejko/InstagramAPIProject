@@ -39,4 +39,9 @@ class StartViewModel: ObservableObject {
     
     func bookmarkButtonTapped(for post: DataObject) {}
     
+    deinit {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+    }
+    
 }

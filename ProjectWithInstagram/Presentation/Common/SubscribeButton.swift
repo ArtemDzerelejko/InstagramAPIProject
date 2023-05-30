@@ -54,8 +54,8 @@ struct SubscribeButton: View {
                                 .font(.system(size: 17, weight: .medium))
                                 .foregroundColor(.black)
                         }
-                            .accentColor(accentColorForFollows)
-                            .padding(.vertical, -15)
+                        .accentColor(accentColorForFollows)
+                        .padding(.vertical, -15)
                     }
                     
                     if xmarkVisible {
@@ -69,7 +69,7 @@ struct SubscribeButton: View {
                         
                     }
                 }
-               
+                
             }
         } .buttonStyle(.plain)
     }

@@ -38,7 +38,7 @@ class SearchViewModel: ObservableObject {
             searchResults = []
             return
         }
-        self.isLoading = true
+        isLoading = true
         isError = false
         feedUseCase.searchInstagramPostByTag(searchValue)
             .receive(on: DispatchQueue.main)
@@ -54,5 +54,10 @@ class SearchViewModel: ObservableObject {
                 self?.searchResults = result.data?.compactMap { $0.caption } ?? []
             }
             .store(in: &cancellables)
+    }
+    
+    deinit {
+        cancellables.forEach{ $0.cancel() }
+        cancellables.removeAll()
     }
 }

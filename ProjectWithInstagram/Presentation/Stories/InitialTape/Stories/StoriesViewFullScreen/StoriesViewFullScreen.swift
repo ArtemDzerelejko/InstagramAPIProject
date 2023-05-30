@@ -14,7 +14,7 @@ struct StoriesViewFullScreen: View {
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 if let currentPost = currentPost {
-                   storyContent(for: currentPost)
+                    storyContent(for: currentPost)
                 } else {
                     Text(Strings.errorNoCurrentPost)
                         .foregroundColor(.white)

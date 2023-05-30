@@ -2,7 +2,7 @@
 import SwiftUI
 
 struct SearchDataTextField: View {
-   
+    
     var title: String
     @Binding var text: String
     
