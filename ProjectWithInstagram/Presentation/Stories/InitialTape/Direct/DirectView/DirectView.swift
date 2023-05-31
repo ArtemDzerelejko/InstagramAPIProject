@@ -48,7 +48,7 @@ struct DirectView: View {
     private var messageSection: some View {
         HStack {
             Button(action: {}) {
-                Text(Strings.messageLabel)
+                Text(Strings.message)
                     .stringsModifiers(size: 17, weight: .semibold, design: .rounded, foregroundColor: .black)
                 Spacer()
             }.buttonStyle(.plain)

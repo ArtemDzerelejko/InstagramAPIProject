@@ -9,4 +9,5 @@ target 'ProjectWithInstagram' do
   pod 'RxSwift'
   pod 'AVKit'
   pod 'RxCombine'
+  pod 'R.swift'
 end

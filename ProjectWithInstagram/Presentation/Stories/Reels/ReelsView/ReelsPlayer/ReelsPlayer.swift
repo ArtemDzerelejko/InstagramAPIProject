@@ -105,7 +105,7 @@ struct ReelsPlayer: View {
                                                     .lineLimit(1)
                                                 
                                                 
-                                                Text(Strings.more)
+                                                Text(Strings.moreLabel)
                                                     .font(.callout.bold())
                                                     .foregroundColor(.gray)
                                             }

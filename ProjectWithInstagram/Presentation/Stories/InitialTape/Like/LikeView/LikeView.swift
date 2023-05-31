@@ -21,7 +21,7 @@ struct LikeView: View {
     }
     
     private var thisMonthSection: some View {
-        Section(header: sectionHeader(title: Strings.thisMonth)) {
+        Section(header: sectionHeader(title: Strings.thisMonthLabel)) {
             ForEach(0..<5) { _ in
                 SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false)
             }
@@ -29,7 +29,7 @@ struct LikeView: View {
     }
     
     private var beforeSection: some View {
-        Section(header: sectionHeader(title: Strings.before)) {
+        Section(header: sectionHeader(title: Strings.beforeLabel)) {
             ForEach(0..<5) { _ in
                 SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false, accentColorForFollows: .gray)
             }
@@ -37,7 +37,7 @@ struct LikeView: View {
     }
     
     private var suggestedForYouSection: some View {
-        Section(header: sectionHeader(title: Strings.suggestedForYou)) {
+        Section(header: sectionHeader(title: Strings.suggestedForYouLabel)) {
             ForEach(0..<5) { _ in
                 SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: true)
             }
@@ -58,7 +58,7 @@ struct LikeView: View {
     }
     
     private var notificationTitle: some View {
-        Text(Strings.notification)
+        Text(Strings.notificationLabel)
             .stringsModifiers(size: 25,
                               weight: .bold,
                               design: .default,

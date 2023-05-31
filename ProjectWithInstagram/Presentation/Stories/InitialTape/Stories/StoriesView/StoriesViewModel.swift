@@ -16,7 +16,7 @@ class StoriesViewModel: ObservableObject {
     ]
     
     func buttonToAddYourOwnStory() -> some View {
-        StoriesViewButtonWithPlusIcon(action: {}, textUnderButton: Strings.you, widthMainImage: 65, heightMainImage: 65, widthPlusImage: 12, heightPlusImage: 12)
+        StoriesViewButtonWithPlusIcon(action: {}, textUnderButton: Strings.youLabel, widthMainImage: 65, heightMainImage: 65, widthPlusImage: 12, heightPlusImage: 12)
     }
     
     func storyItemView(post: Post) -> some View {

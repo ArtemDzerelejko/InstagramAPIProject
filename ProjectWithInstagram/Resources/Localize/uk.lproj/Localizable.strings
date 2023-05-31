@@ -1,0 +1,62 @@
+
+// MARK: - Error
+"errorGeneral" = "Помилка";
+"errorToBuildURL" = "Помилка створення URL-адреси";
+"errorInvalidResponseData" = "Недійсні дані відповід";
+"errorInvalidResponseStatusCode" = "Недійсний код статусу відповіді";
+"errorPostNotFound" = "Допис не знайдено";
+"errorNotFoundCurrentPost" = "Помилка: немає поточної публікації";
+
+// MARK: - MessageButton
+"wasOnlineSometimeAgo" = "Деякий час тому був онлайн";
+
+// MARK: - SubscribeButton
+"name" = "Ім'я";
+"withSmallLetterFollows" = "слудкує";
+"withBigLetterFollows" = "Слідкує";
+
+// MARK: - StartView
+"someInformation" = "Деяка інформація";
+"viewAllCommentsLabel" = "Подивитися усі коментарі";
+
+// MARK: - MessageView
+"searchTitle" = "Пошук";
+"message" = "Повідомлення";
+"requestsLabel" = "Запити";
+"someTimeAgoLabel" = "Деякий час тому";
+
+// MARK: - LikeView
+"thisMonthLabel" = "Цього місяця";
+"beforeLabel" = "Раніше";
+"suggestedForYouLabel" = "Рекомендовано для вас";
+"notificationLabel" = "Сповіщення";
+
+//MARK: - Comments
+"commentsInLowerCase" = "коментарі";
+"commentsInCapitalLetters" = "Коментарі";
+
+// MARK: - ReelsView
+"descriptionReel" = "Деяка інформація про цей Reel, яка служить для відображення функціональності";
+
+// MARK: - ReelsPlayer
+"moreLabel" = "Більше";
+"nameOfTheSoundUsedInReel" = "A Sky full of Stars";
+
+// MARK: - PersonalPageView
+"posts" = "Пости";
+"followersLabel" = "Читачі";
+"followingLabel" = "Стежу";
+"pseudonym" = "Псевдонім";
+"editLabel" = "Редагувати";
+"shareProfile" = "Поділитися профілем";
+"selectedStories" = "Вибрати історію";
+"saveFavoriteStories" = "Збережіть улюблені історії у своєму профілі";
+"textAddBelowStoriesViewButton" = "Додати";
+
+// MARK: - AddContentView
+"newPost" = "Новий допис";
+"further" = "Далі";
+"recent" = "Останні";
+
+// MARK: - StoriesView
+"youLabel" = "Ти";

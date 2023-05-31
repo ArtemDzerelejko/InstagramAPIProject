@@ -68,14 +68,14 @@ struct PersonalPageView: View {
                         Text(Strings.numberOfFollowers)
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                        Text(Strings.followers)
+                        Text(Strings.followersLabel)
                             .font(.caption)
                     }
                     VStack(spacing: 2) {
                         Text(Strings.numberOfFollowing)
                             .font(.subheadline)
                             .fontWeight(.semibold)
-                        Text(Strings.following)
+                        Text(Strings.followingLabel)
                             .font(.caption)
                     }
                 }
@@ -91,7 +91,7 @@ struct PersonalPageView: View {
             }
             HStack {
                 Button(action: {}) {
-                    Text(Strings.edit)
+                    Text(Strings.editLabel)
                         .font(.footnote)
                         .foregroundColor(.black)
                         .fontWeight(.semibold)

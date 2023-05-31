@@ -5,7 +5,7 @@ struct StartView: View {
     
     @StateObject var startViewModel = StartViewModel()
     @State private var isLoading = false
-    
+        
     var body: some View {
         NavigationView {
             VStack {
@@ -24,7 +24,8 @@ struct StartView: View {
     private var headerView: some View {
         HStack {
             Button(action: {}) {
-                Text(Strings.instagramLabel)
+                Text(Strings.instagramTitle)
+                
                     .foregroundColor(.black)
                     .font(.billabong)
                     .padding(.horizontal)
@@ -75,7 +76,7 @@ struct StartView: View {
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                Text(Strings.postNotFound)
+                Text(Strings.errorPostNotFound)
             }
             
             HStack(spacing: 5) {

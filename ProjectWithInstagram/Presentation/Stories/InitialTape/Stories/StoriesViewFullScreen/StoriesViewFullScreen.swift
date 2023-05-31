@@ -16,7 +16,7 @@ struct StoriesViewFullScreen: View {
                 if let currentPost = currentPost {
                     storyContent(for: currentPost)
                 } else {
-                    Text(Strings.errorNoCurrentPost)
+                    Text(Strings.errorNotFoundCurrentPost)
                         .foregroundColor(.white)
                 }
             }

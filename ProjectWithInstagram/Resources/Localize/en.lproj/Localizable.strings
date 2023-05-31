@@ -1,0 +1,62 @@
+
+// MARK: - Error
+"errorGeneral" = "Error";
+"errorToBuildURL" = "Error building URL";
+"errorInvalidResponseData" = "Invalid response data";
+"errorInvalidResponseStatusCode" = "Invalid response status code";
+"errorPostNotFound" = "Post not found";
+"errorNotFoundCurrentPost" = "Error: No current post";
+
+// MARK: - MessageButton
+"wasOnlineSometimeAgo" = "Was online some time ago";
+
+// MARK: - SubscribeButton
+"name" = "Name";
+"withSmallLetterFollows" = "follows";
+"withBigLetterFollows" = "Follows";
+
+// MARK: - StartView
+"someInformation" = "Some information";
+"viewAllCommentsLabel" = "View all comments";
+
+// MARK: - MessageView
+"searchTitle" = "Search";
+"message" = "Message";
+"requestsLabel" = "Requests";
+"someTimeAgoLabel" = "Some time ago";
+
+// MARK: - LikeView
+"thisMonthLabel" = "This month";
+"beforeLabel" = "Before";
+"suggestedForYouLabel" = "Suggested for you";
+"notificationLabel" = "Notification";
+
+//MARK: - Comments
+"commentsInLowerCase" = "comments";
+"commentsInCapitalLetters" = "Comments";
+
+// MARK: - ReelsView
+"descriptionReel" = "Some information about this Reel that serves to display the functionality";
+
+// MARK: - ReelsPlayer
+"moreLabel" = "More";
+"nameOfTheSoundUsedInReel" = "A Sky full of Stars";
+
+// MARK: - PersonalPageView
+"posts" = "Posts";
+"followersLabel" = "Followers";
+"followingLabel" = "Following";
+"pseudonym" = "Pseudonym";
+"editLabel" = "Edit";
+"shareProfile" = "Share profile";
+"selectedStories" = "Selected stories";
+"saveFavoriteStories" = "Save your favorite stories to your profile";
+"textAddBelowStoriesViewButton" = "Add";
+
+// MARK: - AddContentView
+"newPost" = "New post";
+"further" = "Further";
+"recent" = "Recent";
+
+// MARK: - StoriesView
+"youLabel" = "You";

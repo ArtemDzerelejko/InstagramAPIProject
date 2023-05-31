@@ -1,57 +1,54 @@
 
 import Foundation
 
+
 enum Strings {
-    static let errorLabel: String  = "Error"
-    static let nameAcountWithUnderscore: String = "name_acount"
+    static let nameAcountWithUnderscore: String = "Name_acount"
     
-    // MARK: - APIService
-    static let errorBuildingURL: String = "Error building URL"
-    static let invalidResponseData: String = "Invalid response data"
-    static let invalidResponseStatusCode: String = "Invalid response status code"
+    // MARK: - Error
+    static let errorToBuildURL: String = "errorToBuildURL".localized
+    static let errorInvalidResponseData: String = "errorInvalidResponseData".localized
+    static let errorInvalidResponseStatusCode: String = "errorInvalidResponseStatusCode".localized
+    static let errorPostNotFound: String = "errorPostNotFound".localized
+    static let errorNotFoundCurrentPost: String = "errorNotFoundCurrentPost".localized
     
     // MARK: - MessageButton
-    static let wasOnlineSometimeAgo: String = "was online some time ago"
-    
+    static let wasOnlineSometimeAgo: String = "wasOnlineSometimeAgo".localized
+
     // MARK: - SubscribeButton
-    static let name: String = "name"
-    static let withSmallLetterFollows: String = "follows"
-    static let withBigLetterFollows: String = "Follows"
+    static let name: String = "name".localized
+    static let withSmallLetterFollows: String = "withSmallLetterFollows".localized
+    static let withBigLetterFollows: String = "withBigLetterFollows".localized
     
     // MARK: - StartView
-    static let instagramLabel: String = "Instagram"
-    static let postNotFound: String = "Post not found"
-    static let someInformation: String = "some information"
-    static let numberOfLikesLabel: String = "9 likes"
-    static let viewAllCommentsLabel: String = "View all comments"
+    static let instagramTitle: String = "Instagram"
+    static let someInformation: String = "someInformation".localized
+    static let viewAllCommentsLabel: String = "viewAllCommentsLabel".localized
     
     // MARK: - MessageView
-    static let searchTitle: String = "Search"
-    static let messageLabel: String = "Message"
-    static let requestsLabel: String = "Requests"
+    static let searchTitle: String = "searchTitle".localized
+    static let message: String = "message".localized
+    static let requestsLabel: String = "requestsLabel".localized
     static let nameAcountWithoutUnderscore: String = "Name acount"
-    static let someTimeAgoLabel: String = "Some time ago"
+    static let someTimeAgoLabel: String = "someTimeAgoLabel".localized
     
     // MARK: - LikeView
-    static let thisMonth: String = "This month"
-    static let before: String = "Before"
-    static let suggestedForYou: String = "Suggested for you"
-    static let notification: String = "Notification"
-    
-    // MARK: - StoriesViewFullScreen
-    static let errorNoCurrentPost: String = "Error: No current post"
+    static let thisMonthLabel: String = "thisMonthLabel".localized
+    static let beforeLabel: String = "beforeLabel".localized
+    static let suggestedForYouLabel: String = "suggestedForYouLabel".localized
+    static let notificationLabel: String = "notificationLabel".localized
     
     //MARK: - Comments
-    static let commentsInLowerCase: String = "comments"
-    static let commentsInCapitalLetters: String = "Comments"
+    static let commentsInLowerCase: String = "commentsInLowerCase".localized
+    static let commentsInCapitalLetters: String = "commentsInCapitalLetters".localized
     
     // MARK: - ReelsView
-    static let descriptionReel = "Some information about this Reel that serves to display the functionality"
+    static let descriptionReel = "descriptionReel".localized
     
     // MARK: - ReelsPlayer
     static let usernameWhoMadeReel: String = "iJustine"
-    static let more: String = "more"
-    static let nameOfTheSoundUsedInReel: String = "A Sky full of Stars"
+    static let moreLabel: String = "moreLabel".localized
+    static let nameOfTheSoundUsedInReel: String = "nameOfTheSoundUsedInReel".localized
     
     // MARK: - ActionButtons
     static let numberOfLikes: String = "233K"
@@ -59,26 +56,26 @@ enum Strings {
     
     // MARK: - PersonalPageView
     static let numberOfPosts: String = "100"
-    static let posts: String = "Posts"
+    static let posts: String = "posts".localized
     static let numberOfFollowers: String = "100"
-    static let followers: String = "Followers"
+    static let followersLabel: String = "followersLabel".localized
     static let numberOfFollowing: String = "100"
-    static let following: String = "Following"
-    static let pseudonym: String = "Pseudonym"
-    static let edit: String = "Edit"
-    static let shareProfile: String = "Share profile"
-    static let selectedStories: String = "Selected stories"
-    static let saveFavoriteStories: String = "Save your favorite stories to your profile"
-    static let textAddBelowStoriesViewButton = "Add"
+    static let followingLabel: String = "followingLabel".localized
+    static let pseudonym: String = "pseudonym".localized
+    static let editLabel: String = "editLabel".localized
+    static let shareProfile: String = "shareProfile".localized
+    static let selectedStories: String = "selectedStories".localized
+    static let saveFavoriteStories: String = "saveFavoriteStories".localized
+    static let textAddBelowStoriesViewButton = "textAddBelowStoriesViewButton".localized
     
     // MARK: - AddContentView
-    static let newPost: String = "New post"
-    static let further: String = "Further"
-    static let recent: String = "Recent"
+    static let newPost: String = "newPost".localized
+    static let further: String = "further".localized
+    static let recent: String = "recent".localized
     
     
     // MARK: - StoriesView
-    static let you: String = "You"
+    static let youLabel: String = "youLabel".localized
 }
 
 enum Colors {

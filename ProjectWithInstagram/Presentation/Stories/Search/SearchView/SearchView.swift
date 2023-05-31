@@ -59,7 +59,7 @@ struct SearchView: View {
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
             } placeholder: {
-                Text(Strings.postNotFound)
+                Text(Strings.errorPostNotFound)
             }
             
             HStack(spacing: 5) {
