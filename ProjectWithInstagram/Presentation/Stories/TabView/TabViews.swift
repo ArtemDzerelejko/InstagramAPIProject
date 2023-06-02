@@ -6,13 +6,11 @@ struct TabViews: View {
     var body: some View {
         
         TabView {
-            
             StartView().tabItem {
                 
                 Image.houseSystem
                 
             }
-            
             SearchView().tabItem {
                 
                 Image.magnifyingglassSystem

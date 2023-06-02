@@ -46,7 +46,7 @@ struct AddContentView: View {
                 Spacer()
             }
             
-            NavigationLink(destination: SearchView()) {
+            Button(action: {}) {
                 Text(Strings.further)
                     .foregroundColor(.blue)
                     .font(.system(size: 17, weight: .medium, design: .rounded))

@@ -44,83 +44,94 @@ struct SearchView: View {
     
     private func postRowView(post: DataObject) -> some View {
         VStack(alignment: .leading) {
-            HStack {
-                Image.userIcon
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
-                    .clipShape(Circle())
-                    .padding(.horizontal, 5)
-                Text(Strings.nameAcountWithUnderscore)
-                Spacer()
-            }
-            
+            avatarAndUsername
             AsyncImage(url: URL(string: post.media_url ?? "")) { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
+                
+                panelOfReactionsToThePost
+                postDescription
+                
             } placeholder: {
                 Text(Strings.errorPostNotFound)
             }
-            
-            HStack(spacing: 5) {
-                Button(action: {}) {
-                    Image.heartSystem
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .foregroundColor(.black)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 2)
-                }
-                .buttonStyle(.plain)
-                
-                NavigationLink(destination: CommentsView()) {
-                    Image.messageSystem
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .foregroundColor(.black)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 2)
-                }
-                .buttonStyle(.plain)
-                
-                NavigationLink(destination: DirectView()) {
-                    Image.paperplaneSystem
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .foregroundColor(.black)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 2)
-                }
-                .buttonStyle(.plain)
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image.bookmarkSystem
-                        .font(.system(size: 20, weight: .bold, design: .default))
-                        .foregroundColor(.black)
-                        .padding(.horizontal, 5)
-                        .padding(.vertical, 2)
-                }
-                .buttonStyle(.plain)
+        }
+    }
+    
+    private var panelOfReactionsToThePost: some View {
+        HStack(spacing: 5) {
+            Button(action: {}) {
+                Image.heartSystem
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
             }
+            .buttonStyle(.plain)
             
-            VStack(alignment: .leading) {
-                Text(Strings.numberOfLikes)
+            NavigationLink(destination: CommentsView()) {
+                Image.messageSystem
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
+            }
+            .buttonStyle(.plain)
+            
+            NavigationLink(destination: DirectView()) {
+                Image.paperplaneSystem
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
+            }
+            .buttonStyle(.plain)
+            
+            Spacer()
+            
+            Button(action: {}) {
+                Image.bookmarkSystem
+                    .font(.system(size: 20, weight: .bold, design: .default))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
+            }
+            .buttonStyle(.plain)
+        }
+    }
+    
+    private var postDescription: some View {
+        VStack(alignment: .leading) {
+            Text(Strings.numberOfLikes)
+                .font(.system(size: 15, weight: .medium, design: .default))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text(Strings.nameAcountWithUnderscore + " " + Strings.someInformation)
+                .font(.system(size: 15, weight: .medium, design: .default))
+            
+            NavigationLink(destination: CommentsView()) {
+                Text(Strings.viewAllCommentsLabel + "( \(Strings.numberOfComments))")
                     .font(.system(size: 15, weight: .medium, design: .default))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text(Strings.nameAcountWithUnderscore + " " + Strings.someInformation)
-                    .font(.system(size: 15, weight: .medium, design: .default))
-                
-                NavigationLink(destination: CommentsView()) {
-                    Text(Strings.viewAllCommentsLabel + "( \(Strings.numberOfComments))")
-                        .font(.system(size: 15, weight: .medium, design: .default))
-                        .foregroundColor(.gray)
-                }
-                
-                Text(Strings.someTimeAgoLabel)
-                    .font(.system(size: 12, weight: .medium, design: .default))
                     .foregroundColor(.gray)
             }
-            .padding(.horizontal, 5)
+            
+            Text(Strings.someTimeAgoLabel)
+                .font(.system(size: 12, weight: .medium, design: .default))
+                .foregroundColor(.gray)
+        }
+        .padding(.horizontal, 5)
+    }
+    
+    private var avatarAndUsername: some View {
+        HStack {
+            Image.userIcon
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30)
+                .clipShape(Circle())
+                .padding(.horizontal, 5)
+            Text(Strings.nameAcountWithUnderscore)
+            Spacer()
         }
     }
 }

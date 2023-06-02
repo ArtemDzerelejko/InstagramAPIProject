@@ -3,9 +3,9 @@ import SwiftUI
 
 struct StartView: View {
     
-    @StateObject var startViewModel = StartViewModel()
+    @ObservedObject var startViewModel = StartViewModel()
     @State private var isLoading = false
-        
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -35,12 +35,12 @@ struct StartView: View {
                 
                 NavigationLink(destination: LikeView()) {
                     Image.heartSystem
-                        .systemImageModified(weight: .bold)
+                        .systemImageModified(size: 20, weight: .bold)
                 }
                 
                 NavigationLink(destination: DirectView()) {
                     Image.messageSystem
-                        .systemImageModified(weight: .bold)
+                        .systemImageModified(size: 20, weight: .bold)
                 }
                 .transition(.move(edge: .leading))
                 .navigationBarTitle("")
@@ -63,65 +63,77 @@ struct StartView: View {
     private func postRowView(post: DataObject) -> some View {
         
         VStack(alignment: .leading) {
-            HStack {
-                Image.userIcon
-                    .resizable()
-                    .imageModified(aspectRatio: .fit, width: 30, height: 30, paddingLength: 5)
-                    .clipShape(Circle())
-                Text(Strings.nameAcountWithUnderscore)
-                Spacer()
-            }
-            
+            avatarAndUsername
             AsyncImage(url: URL(string: post.media_url ?? "")) { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
+                
+                panelOfReactionsToThePost
+                postDescription
+                
             } placeholder: {
                 Text(Strings.errorPostNotFound)
             }
             
-            HStack(spacing: 5) {
-                Button(action: {}) {
-                    Image.heartSystem
-                        .systemImageModified()
-                }
-                
-                NavigationLink(destination: CommentsView()) {
-                    Image.messageSystem
-                        .systemImageModified()
-                }
-                
-                NavigationLink(destination: DirectView()) {
-                    Image.paperplaneSystem
-                        .systemImageModified()
-                }
-                
-                Spacer()
-                
-                Button(action: {}) {
-                    Image.bookmarkSystem
-                        .systemImageModified()
-                }
+        }
+    }
+    
+    private var panelOfReactionsToThePost: some View {
+        HStack(spacing: 5) {
+            Button(action: {}) {
+                Image.heartSystem
+                    .systemImageModified(size: 20, weight: .bold)
             }
             
-            VStack(alignment: .leading) {
-                Text(Strings.numberOfLikes)
-                    .font(.system(size: 15, weight: .medium, design: .default))
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text(Strings.nameAcountWithUnderscore + " " + Strings.someInformation)
-                    .font(.system(size: 15, weight: .medium, design: .default))
-                
-                NavigationLink(destination: CommentsView()) {
-                    Text(Strings.viewAllCommentsLabel + "( \(Strings.numberOfComments))")
-                        .font(.system(size: 15, weight: .medium, design: .default))
-                        .foregroundColor(.gray)
-                }
-                
-                Text(Strings.someTimeAgoLabel)
+            NavigationLink(destination: CommentsView()) {
+                Image.messageSystem
+                    .systemImageModified(size: 20, weight: .bold)
+            }
+            
+            NavigationLink(destination: DirectView()) {
+                Image.paperplaneSystem
+                    .systemImageModified(size: 20, weight: .bold)
+            }
+            
+            Spacer()
+            
+            Button(action: {}) {
+                Image.bookmarkSystem
+                    .systemImageModified(size: 20, weight: .bold)
+            }
+        }
+    }
+    
+    private var postDescription: some View {
+        VStack(alignment: .leading) {
+            Text(Strings.numberOfLikes)
+                .font(.system(size: 15, weight: .medium, design: .default))
+                .frame(maxWidth: .infinity, alignment: .leading)
+            
+            Text(Strings.nameAcountWithUnderscore + " " + Strings.someInformation)
+                .font(.system(size: 15, weight: .medium, design: .default))
+            
+            NavigationLink(destination: CommentsView()) {
+                Text(Strings.viewAllCommentsLabel + "( \(Strings.numberOfComments))")
                     .font(.system(size: 15, weight: .medium, design: .default))
                     .foregroundColor(.gray)
             }
-            .padding(.horizontal, 5)
+            
+            Text(Strings.someTimeAgoLabel)
+                .font(.system(size: 15, weight: .medium, design: .default))
+                .foregroundColor(.gray)
+        }
+        .padding(.horizontal, 5)
+    }
+    
+    private var avatarAndUsername: some View {
+        HStack {
+            Image.userIcon
+                .resizable()
+                .imageModified(aspectRatio: .fit, width: 30, height: 30, paddingLength: 5)
+                .clipShape(Circle())
+            Text(Strings.nameAcountWithUnderscore)
+            Spacer()
         }
     }
 }

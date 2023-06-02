@@ -23,15 +23,14 @@ struct ReelsView: View {
         GeometryReader { proxy in
             let size = proxy.size
             contentView(size: size)
-                .ignoresSafeArea(.all, edges: .top)
-                .background(Color.black.ignoresSafeArea())
                 .onAppear{
                     currentReel = reels.first?.id ?? ""
                 }
                 .onDisappear{
-                  pauseCurrentReel()
+                    pauseCurrentReel()
                 }
-        }
+        }.ignoresSafeArea(.all, edges: .top)
+            .background(Color.black)
     }
     
     private func contentView(size: CGSize) -> some View {
@@ -39,11 +38,9 @@ struct ReelsView: View {
             ForEach($reels){$reel in
                 ReelsPlayer(reel: $reel, currentReel: $currentReel)
                     .frame(width: size.width)
-                
                     .rotationEffect(.init(degrees: -90))
-                    .ignoresSafeArea(.all, edges: .top)
+                    .ignoresSafeArea()
                     .tag(reel.id)
-                
                 
             }
         }

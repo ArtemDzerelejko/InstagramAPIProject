@@ -2,7 +2,7 @@
 import Foundation
 import Combine
 
-class StartViewModel: ObservableObject {
+final class StartViewModel: ObservableObject {
     
     @Published var posts: [DataObject] = []
     @Published var apiResult: ModelForJSON?

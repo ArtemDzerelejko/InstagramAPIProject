@@ -29,8 +29,8 @@ struct CommentsView: View {
                     .font(.system(size: 15, weight: .bold, design: .rounded))
                     .padding(.horizontal, 100)
             }
+            .buttonStyle(.plain)
         }
-        .buttonStyle(.plain)
     }
     
     private var navigationTrailingItems: some View {

@@ -12,26 +12,29 @@ struct PersonalPageView: View {
     ]
     let imageDimension = UIScreen.main.bounds.width / 3
     
+    
     var body: some View {
         VStack {
-            headerView
+            titleView
             ScrollView(.vertical, showsIndicators: false) {
                 content
             }
         }
+        .navigationBarItems(leading: navigationLeadingItems, trailing: navigationTrailingItems)
     }
     
-    private var headerView: some View {
-        HStack {
+    private var titleView: some View {
+        HStack() {
             Button(action: {}) {
                 Text(Strings.nameAcountWithoutUnderscore)
-                    .stringsModifiers(size: 20, weight: .heavy, design: .rounded, foregroundColor: .black)
-                Spacer()
+                    .font(.system(size: 20, weight: .heavy, design: .rounded))
+                    .foregroundColor(.black)
+                    .padding(.horizontal)
             }
-            .padding(.horizontal)
             .buttonStyle(.plain)
-            HStack(spacing: 20) {
-                
+            
+            HStack(spacing: 1) {
+                Spacer()
                 Button(action: {}) {
                     Image.plusAppSystem
                         .imageModified(size: 20, weight: .medium, design: .rounded)
@@ -43,12 +46,48 @@ struct PersonalPageView: View {
                         .resizable()
                         .imageModified(width: 20, height: 20)
                 }
+                .padding(.horizontal)
                 .buttonStyle(.plain)
             }
-            .padding(.horizontal)
-            Spacer()
         }
     }
+    
+    
+    private var navigationLeadingItems: some View {
+        HStack {
+            Button(action: {}) {
+                Text(Strings.nameAcountWithoutUnderscore)
+                    .font(.system(size: 20, weight: .heavy, design: .rounded))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 100)
+            }
+            .buttonStyle(.plain)
+            
+        }
+    }
+    
+    private var navigationTrailingItems: some View {
+        HStack(spacing: 5) {
+            
+            Button(action: {}) {
+                Image.plusAppSystem
+                    .imageModified(size: 20, weight: .medium, design: .rounded)
+            }
+            .buttonStyle(.plain)
+            
+            Button(action: {}) {
+                Image.moreInformation
+                    .resizable()
+                    .imageModified(width: 20, height: 20)
+                Spacer()
+                    .padding(.horizontal)
+            }
+            
+            .buttonStyle(.plain)
+        }
+        
+    }
+    
     
     private var content: some View {
         VStack(alignment: .leading) {
@@ -89,7 +128,9 @@ struct PersonalPageView: View {
                     .padding(.vertical, 5)
                 Spacer()
             }
+            
             HStack {
+                Spacer()
                 Button(action: {}) {
                     Text(Strings.editLabel)
                         .font(.footnote)
@@ -98,7 +139,9 @@ struct PersonalPageView: View {
                         .frame(width: 160, height: 28)
                         .background(Color.lightGray)
                         .cornerRadius(cornerRadius)
+                    
                 }
+                
                 .buttonStyle(.plain)
                 Button(action: {}) {
                     Text(Strings.shareProfile)
@@ -112,13 +155,14 @@ struct PersonalPageView: View {
                 .buttonStyle(.plain)
                 Button(action: {}) {
                     Image.personBadgePlusSystem
-                        .systemImageModified(fontWeight: .medium,
-                                             cornerRadius: cornerRadius,
-                                             foregroundColor: .black)
+                        .fontWeight(.medium)
+                        .foregroundColor(.black)
                         .frame(width: 35, height: 30)
                         .background(Color.lightGray)
+                        .cornerRadius(cornerRadius)
                 }
                 .buttonStyle(.plain)
+                Spacer()
             }
             VStack(alignment: .leading) {
                 Text(Strings.selectedStories)
@@ -128,7 +172,7 @@ struct PersonalPageView: View {
                     .font(.footnote)
                     .fontWeight(.light)
                 ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 9) {
+                    HStack(spacing: 15) {
                         StoriesViewButton(action: {},
                                           strokeColor: .gray,
                                           widthFrame: 25,
@@ -179,3 +223,5 @@ struct PersonalPageView_Previews: PreviewProvider {
         PersonalPageView()
     }
 }
+
+

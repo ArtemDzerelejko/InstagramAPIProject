@@ -3,15 +3,15 @@ import Foundation
 import Combine
 
 final class FeedUseCase {
-    
-    private let apiRepository: FeedRepositoryProtocol = FeedRepository()
-    
+
+    private let feedRepository: FeedRepositoryProtocol = FeedRepository()
+
     func creatingRequestToTheServerToGetInstagramData() -> AnyPublisher<ModelForJSON, Error> {
-        apiRepository.creatingRequestToTheServerToGetInstagramData()
+        feedRepository.creatingRequestToTheServerToGetInstagramData()
     }
-    
+
     func searchInstagramPostByTag(_ tag: String) -> AnyPublisher<ModelForJSON, Error> {
-        apiRepository.searchInstagramPostByTag(tag)
+        feedRepository.searchInstagramPostByTag(tag)
     }
-    
+
 }

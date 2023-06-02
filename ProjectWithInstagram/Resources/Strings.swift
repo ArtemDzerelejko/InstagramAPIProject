@@ -14,7 +14,7 @@ enum Strings {
     
     // MARK: - MessageButton
     static let wasOnlineSometimeAgo: String = "wasOnlineSometimeAgo".localized
-
+    
     // MARK: - SubscribeButton
     static let name: String = "name".localized
     static let withSmallLetterFollows: String = "withSmallLetterFollows".localized
@@ -48,7 +48,7 @@ enum Strings {
     // MARK: - ReelsPlayer
     static let usernameWhoMadeReel: String = "iJustine"
     static let moreLabel: String = "moreLabel".localized
-    static let nameOfTheSoundUsedInReel: String = "nameOfTheSoundUsedInReel".localized
+    static let nameOfTheSoundUsedInReel: String = "A Sky full of Stars"
     
     // MARK: - ActionButtons
     static let numberOfLikes: String = "233K"
