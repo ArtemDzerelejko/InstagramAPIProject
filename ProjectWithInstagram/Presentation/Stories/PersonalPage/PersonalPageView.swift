@@ -23,6 +23,7 @@ struct PersonalPageView: View {
     }
     
     private var headerView: some View {
+        
         HStack() {
             Button(action: {}) {
                 Text(Strings.nameAcountWithoutUnderscore)
