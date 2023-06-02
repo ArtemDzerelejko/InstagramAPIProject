@@ -52,7 +52,7 @@ struct StartView: View {
     private var postView: some View {
         VStack {
             ForEach(startViewModel.posts, id: \.id) { post in
-                NavigationLink(destination: PersonalPageView()) {
+                Button(action: {}) {
                     postRowView(post: post)
                 }
                 .buttonStyle(.plain)

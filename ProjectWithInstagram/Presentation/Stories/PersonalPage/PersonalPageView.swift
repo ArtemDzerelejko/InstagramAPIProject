@@ -20,7 +20,6 @@ struct PersonalPageView: View {
                 content
             }
         }
-        .navigationBarItems(leading: navigationLeadingItems, trailing: navigationTrailingItems)
     }
     
     private var titleView: some View {
@@ -51,43 +50,6 @@ struct PersonalPageView: View {
             }
         }
     }
-    
-    
-    private var navigationLeadingItems: some View {
-        HStack {
-            Button(action: {}) {
-                Text(Strings.nameAcountWithoutUnderscore)
-                    .font(.system(size: 20, weight: .heavy, design: .rounded))
-                    .foregroundColor(.black)
-                    .padding(.horizontal, 100)
-            }
-            .buttonStyle(.plain)
-            
-        }
-    }
-    
-    private var navigationTrailingItems: some View {
-        HStack(spacing: 5) {
-            
-            Button(action: {}) {
-                Image.plusAppSystem
-                    .imageModified(size: 20, weight: .medium, design: .rounded)
-            }
-            .buttonStyle(.plain)
-            
-            Button(action: {}) {
-                Image.moreInformation
-                    .resizable()
-                    .imageModified(width: 20, height: 20)
-                Spacer()
-                    .padding(.horizontal)
-            }
-            
-            .buttonStyle(.plain)
-        }
-        
-    }
-    
     
     private var content: some View {
         VStack(alignment: .leading) {
