@@ -153,7 +153,8 @@
 		AC00F0092A1665D800DCAE93 /* Direct */ = {
 			isa = PBXGroup;
 			children = (
-				AC00F02F2A179CB300DCAE93 /* DirectView */,
+				AC00F00D2A16678300DCAE93 /* DirectViewModel.swift */,
+				ACB89FFF2A052F4A00D16062 /* DirectView.swift */,
 			);
 			path = Direct;
 			sourceTree = "<group>";
@@ -161,7 +162,7 @@
 		AC00F00A2A1665E900DCAE93 /* Like */ = {
 			isa = PBXGroup;
 			children = (
-				AC00F0312A179CF800DCAE93 /* LikeView */,
+				ACB8A0072A0917CA00D16062 /* LikeView.swift */,
 			);
 			path = Like;
 			sourceTree = "<group>";
@@ -207,78 +208,29 @@
 		AC00F0242A1799A500DCAE93 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				AC00F0252A1799BA00DCAE93 /* SearchView */,
+				AC00F0352A179DCE00DCAE93 /* SearchViewModel.swift */,
+				ACB89FD22A01991E00D16062 /* SearchView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
 		};
-		AC00F0252A1799BA00DCAE93 /* SearchView */ = {
-			isa = PBXGroup;
-			children = (
-				AC00F0352A179DCE00DCAE93 /* SearchViewModel.swift */,
-				ACB89FD22A01991E00D16062 /* SearchView.swift */,
-			);
-			path = SearchView;
-			sourceTree = "<group>";
-		};
 		AC00F0272A179A6800DCAE93 /* AddContent */ = {
-			isa = PBXGroup;
-			children = (
-				AC00F0292A179A9100DCAE93 /* AddContentView */,
-			);
-			path = AddContent;
-			sourceTree = "<group>";
-		};
-		AC00F0292A179A9100DCAE93 /* AddContentView */ = {
 			isa = PBXGroup;
 			children = (
 				AC00F0152A17451600DCAE93 /* AddContentViewModel.swift */,
 				ACB89FD42A0199C000D16062 /* AddContentView.swift */,
 				AC3ADECF2A15019900C4BAEB /* ImagePickerView */,
 			);
-			path = AddContentView;
+			path = AddContent;
 			sourceTree = "<group>";
 		};
 		AC00F02C2A179BF500DCAE93 /* Reels */ = {
 			isa = PBXGroup;
 			children = (
-				AC00F02D2A179C0100DCAE93 /* ReelsView */,
-			);
-			path = Reels;
-			sourceTree = "<group>";
-		};
-		AC00F02D2A179C0100DCAE93 /* ReelsView */ = {
-			isa = PBXGroup;
-			children = (
 				ACB89FD62A019B3800D16062 /* ReelsView.swift */,
 				ACB8A0682A0BCD1700D16062 /* ReelsPlayer */,
 			);
-			path = ReelsView;
-			sourceTree = "<group>";
-		};
-		AC00F02E2A179C5000DCAE93 /* PersonalPageView */ = {
-			isa = PBXGroup;
-			children = (
-				ACB89FD82A019BDE00D16062 /* PersonalPageView.swift */,
-			);
-			path = PersonalPageView;
-			sourceTree = "<group>";
-		};
-		AC00F02F2A179CB300DCAE93 /* DirectView */ = {
-			isa = PBXGroup;
-			children = (
-				AC00F00D2A16678300DCAE93 /* DirectViewModel.swift */,
-				ACB89FFF2A052F4A00D16062 /* DirectView.swift */,
-			);
-			path = DirectView;
-			sourceTree = "<group>";
-		};
-		AC00F0312A179CF800DCAE93 /* LikeView */ = {
-			isa = PBXGroup;
-			children = (
-				ACB8A0072A0917CA00D16062 /* LikeView.swift */,
-			);
-			path = LikeView;
+			path = Reels;
 			sourceTree = "<group>";
 		};
 		AC00F0322A179D2300DCAE93 /* StartView */ = {
@@ -288,15 +240,6 @@
 				ACB89FD02A0197F400D16062 /* StartView.swift */,
 			);
 			path = StartView;
-			sourceTree = "<group>";
-		};
-		AC00F0342A179DAB00DCAE93 /* StoriesView */ = {
-			isa = PBXGroup;
-			children = (
-				AC00F0112A16688800DCAE93 /* StoriesViewModel.swift */,
-				AC8B38A82A126B1F00FB2B10 /* StoriesView.swift */,
-			);
-			path = StoriesView;
 			sourceTree = "<group>";
 		};
 		AC00F0382A17A84E00DCAE93 /* UseCase */ = {
@@ -318,7 +261,7 @@
 		AC00F03A2A17BA5A00DCAE93 /* Сomments */ = {
 			isa = PBXGroup;
 			children = (
-				ACEBDC082A1CEC55000DD021 /* CommentsView */,
+				AC00F03D2A17BA9300DCAE93 /* CommentsView.swift */,
 			);
 			path = "Сomments";
 			sourceTree = "<group>";
@@ -399,7 +342,8 @@
 		AC8B38A72A126B0900FB2B10 /* Stories */ = {
 			isa = PBXGroup;
 			children = (
-				AC00F0342A179DAB00DCAE93 /* StoriesView */,
+				AC00F0112A16688800DCAE93 /* StoriesViewModel.swift */,
+				AC8B38A82A126B1F00FB2B10 /* StoriesView.swift */,
 				AC3ADED22A1507FE00C4BAEB /* StoriesViewFullScreen */,
 			);
 			path = Stories;
@@ -512,7 +456,7 @@
 		ACB89FFC2A03DFDD00D16062 /* PersonalPage */ = {
 			isa = PBXGroup;
 			children = (
-				AC00F02E2A179C5000DCAE93 /* PersonalPageView */,
+				ACB89FD82A019BDE00D16062 /* PersonalPageView.swift */,
 			);
 			path = PersonalPage;
 			sourceTree = "<group>";
@@ -571,14 +515,6 @@
 				ACBC67A82A262E3400B1BAFA /* Localizable.strings */,
 			);
 			path = Localize;
-			sourceTree = "<group>";
-		};
-		ACEBDC082A1CEC55000DD021 /* CommentsView */ = {
-			isa = PBXGroup;
-			children = (
-				AC00F03D2A17BA9300DCAE93 /* CommentsView.swift */,
-			);
-			path = CommentsView;
 			sourceTree = "<group>";
 		};
 		E25882E091D2CE9EC40ADDF8 /* Frameworks */ = {
