@@ -15,14 +15,14 @@ struct PersonalPageView: View {
     
     var body: some View {
         VStack {
-            titleView
+            headerView
             ScrollView(.vertical, showsIndicators: false) {
                 content
             }
         }
     }
     
-    private var titleView: some View {
+    private var headerView: some View {
         HStack() {
             Button(action: {}) {
                 Text(Strings.nameAcountWithoutUnderscore)
