@@ -23,9 +23,7 @@ struct PersonalPageView: View {
     }
     
     private var headerView: some View {
-        
         HStack() {
-            
             Button(action: {}) {
                 Text(Strings.nameAcountWithoutUnderscore)
                     .font(.system(size: 20, weight: .heavy, design: .rounded))
