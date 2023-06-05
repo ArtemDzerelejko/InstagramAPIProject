@@ -4,32 +4,28 @@ import UIKit
 
 struct AddContentView: View {
     
-    @StateObject private var addContentViewModel = AddContentViewModel()
-    @State private var showGalleryPicker = false
-    @State private var showCameraPicker = false
-    let columns = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-        GridItem(.flexible())
-    ]
-    let imageDimension = UIScreen.main.bounds.width / 3
-    
     var body: some View {
         
         NavigationView {
+            
             ZStack {
                 Color.black.ignoresSafeArea()
+                
                 VStack {
-                    navigationBar
-                    contentView
+                    NavigationBarView()
+                    ContentView()
                 }
                 
             }
         }
     }
-    
-    private var navigationBar: some View {
+}
+
+private struct NavigationBarView: View {
+    var body: some View {
+        
         HStack {
+            
             Button(action: {}) {
                 Image.xmarkSystem
                     .foregroundColor(.white)
@@ -39,6 +35,7 @@ struct AddContentView: View {
             .padding(.horizontal)
             
             HStack(alignment: .center) {
+                
                 Spacer()
                 Text(Strings.newPost)
                     .foregroundColor(.white)
@@ -56,9 +53,20 @@ struct AddContentView: View {
             Spacer()
         }
     }
+}
+
+private struct ContentView: View {
+    let columns = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+        GridItem(.flexible())
+    ]
+    @StateObject private var addContentViewModel = AddContentViewModel()
+    let imageDimension = UIScreen.main.bounds.width / 3
     
-    private var contentView: some View {
+    var body: some View {
         VStack {
+            
             if let image = addContentViewModel.selectedImage {
                 Image(uiImage: image)
                     .resizable()
@@ -71,10 +79,12 @@ struct AddContentView: View {
                     .padding()
             }
             
-            navigationButtonsWhenAddingNewPost
+            NavigationButtonsWhenAddingNewPost()
             
             ScrollView(.vertical, showsIndicators: false) {
+                
                 LazyVGrid(columns: columns, spacing: 0) {
+                    
                     ForEach(0 ..< 100, id: \.self) { index in
                         Image.pictureForANewPost
                             .resizable()
@@ -87,9 +97,15 @@ struct AddContentView: View {
             }
         }
     }
-    
-    private var navigationButtonsWhenAddingNewPost: some View {
+}
+
+private struct NavigationButtonsWhenAddingNewPost: View {
+    @StateObject private var addContentViewModel = AddContentViewModel()
+    @State private var showGalleryPicker = false
+    @State private var showCameraPicker = false
+    var body: some View {
         HStack {
+            
             Button(action: {}) {
                 Text(Strings.recent)
                     .foregroundColor(.white)
@@ -129,7 +145,6 @@ struct AddContentView: View {
         }
     }
 }
-
 
 struct AddContentView_Previews: PreviewProvider {
     static var previews: some View {

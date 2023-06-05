@@ -31,10 +31,11 @@ struct TabViews: View {
                 
                 Image.personCircleFillSystem
             }
-        }.onAppear() {
-            UITabBar.appearance().barTintColor = .white
-            UITabBar.appearance().unselectedItemTintColor = .black
-        }.accentColor(Color.black)
+        }
+        .onAppear() {
+           UITabBar.appearance().unselectedItemTintColor = .black
+        }
+        .accentColor(Color.black)
     }
 }
 

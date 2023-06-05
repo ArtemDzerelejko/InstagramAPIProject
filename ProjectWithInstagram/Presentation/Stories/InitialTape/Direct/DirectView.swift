@@ -6,70 +6,90 @@ struct DirectView: View {
     @StateObject private var directViewModel = DirectViewModel()
     
     var body: some View {
+        
         VStack {
-            content
+            Content()
         }
-        .navigationBarItems(leading: navigationLeadingItems)
-        .navigationBarItems(trailing: navigationTrailingItems)
+        .navigationBarItems(leading: NavigationLeadingItems())
+        .navigationBarItems(trailing: NavigationTrailingItems())
     }
-    
-    private var content: some View {
+}
+
+private struct Content: View {
+    var body: some View {
         ScrollView(showsIndicators: false) {
+            
             VStack {
-                searchTextField
-                storiesView
-                messageSection
-                messages
+                SearchTextField()
+                StoriesViews()
+                MessageSection()
+                Messages()
             }
         }
     }
-    
-    private var searchTextField: some View {
+}
+
+private struct SearchTextField: View {
+    @StateObject private var directViewModel = DirectViewModel()
+    var body: some View {
         HStack {
             SearchDataTextField(title: Strings.searchTitle, text: $directViewModel.searchValue)
         }
     }
-    
-    private var storiesView: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 28) {
-                StoriesViewButton(action: {}, strokeColor: .black, widthFrame: 25, heightFrame: 25, backgroundColor: .white, foregroundColor: .black, showSecond: true)
+}
+
+private struct StoriesViews: View {
+    var body: some View {
+            ScrollView(.horizontal, showsIndicators: false) {
                 
-                ForEach(0..<6) { _ in
-                    StoriesViewButton(action: {}, widthFrame: 25, heightFrame: 25)
+                HStack(spacing: 28) {
+                    StoriesViewButton(action: {}, strokeColor: .black, widthFrame: 25, heightFrame: 25, backgroundColor: .white, foregroundColor: .black, showSecond: true)
                     
+                    ForEach(0..<6) { _ in
+                        StoriesViewButton(action: {}, widthFrame: 25, heightFrame: 25)
+                        
+                    }
                 }
+                .padding(.vertical, 5)
+                .padding(.horizontal)
             }
-            .padding(.vertical, 5)
-            .padding(.horizontal)
-        }
     }
-    
-    private var messageSection: some View {
-        HStack {
-            Button(action: {}) {
-                Text(Strings.message)
-                    .stringsModifiers(size: 17, weight: .semibold, design: .rounded, foregroundColor: .black)
-                Spacer()
-            }.buttonStyle(.plain)
-            
+}
+
+private struct MessageSection: View {
+    var body: some View {
+        
             HStack {
                 Button(action: {}) {
-                    Text(Strings.requestsLabel)
-                        .stringsModifiers(size: 15, weight: .heavy, design: .rounded, foregroundColor: .gray)
+                    Text(Strings.message)
+                        .stringsModifiers(size: 17, weight: .semibold, design: .rounded, foregroundColor: .black)
+                    Spacer()
+                }
+                .buttonStyle(.plain)
+                
+                HStack {
+                    
+                    Button(action: {}) {
+                        Text(Strings.requestsLabel)
+                            .stringsModifiers(size: 15, weight: .heavy, design: .rounded, foregroundColor: .gray)
+                    }
                 }
             }
-        }
     }
-    
-    private var messages: some View {
-        ForEach(0..<100) { _ in
-            SendMessageButton(actionForMainButton: {}, actionForStoriesViewButton: {},  actionForCameraButton: {})
-        }
-        .padding(.vertical, -16)
+}
+
+private struct Messages: View {
+    var body: some View {
+            ForEach(0..<100) { _ in
+                SendMessageButton(actionForMainButton: {}, actionForStoriesViewButton: {},  actionForCameraButton: {})
+            }
+            .padding(.vertical, -16)
     }
-    
-    private var navigationLeadingItems: some View {
+}
+
+private struct NavigationLeadingItems: View {
+    var body: some View {
+        
         HStack {
             Button(action: {}) {
                 Text(Strings.nameAcountWithoutUnderscore)
@@ -78,8 +98,10 @@ struct DirectView: View {
         }
         .buttonStyle(.plain)
     }
-    
-    private var navigationTrailingItems: some View {
+}
+
+private struct NavigationTrailingItems: View {
+    var body: some View {
         HStack {
             Button(action: {}) {
                 Image.videoBadgePlusSystem

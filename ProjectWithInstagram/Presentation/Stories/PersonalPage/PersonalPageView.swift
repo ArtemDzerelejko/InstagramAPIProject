@@ -14,51 +14,27 @@ struct PersonalPageView: View {
     
     
     var body: some View {
+        
         VStack {
-            headerView
+            HeaderView()
             ScrollView(.vertical, showsIndicators: false) {
                 content
             }
         }
     }
     
-    private var headerView: some View {
-        HStack() {
-            Button(action: {}) {
-                Text(Strings.nameAcountWithoutUnderscore)
-                    .font(.system(size: 20, weight: .heavy, design: .rounded))
-                    .foregroundColor(.black)
-                    .padding(.horizontal)
-            }
-            .buttonStyle(.plain)
-            
-            HStack(spacing: 1) {
-                Spacer()
-                Button(action: {}) {
-                    Image.plusAppSystem
-                        .imageModified(size: 20, weight: .medium, design: .rounded)
-                }
-                .buttonStyle(.plain)
-                
-                Button(action: {}) {
-                    Image.moreInformation
-                        .resizable()
-                        .imageModified(width: 20, height: 20)
-                }
-                .padding(.horizontal)
-                .buttonStyle(.plain)
-            }
-        }
-    }
-    
     private var content: some View {
         VStack(alignment: .leading) {
+            
             HStack {
+                
                 StoriesViewButtonWithPlusIcon(action: {}, widthMainImage: 100, heightMainImage: 100, widthPlusImage: 12, heightPlusImage: 12)
                     .padding(.horizontal)
                 Spacer()
                 HStack(spacing: 32) {
+                    
                     VStack(spacing: 2) {
+                        
                         Text(Strings.numberOfPosts)
                             .font(.subheadline)
                             .fontWeight(.semibold)
@@ -66,6 +42,7 @@ struct PersonalPageView: View {
                             .font(.caption)
                     }
                     VStack(spacing: 2) {
+                        
                         Text(Strings.numberOfFollowers)
                             .font(.subheadline)
                             .fontWeight(.semibold)
@@ -73,6 +50,7 @@ struct PersonalPageView: View {
                             .font(.caption)
                     }
                     VStack(spacing: 2) {
+                        
                         Text(Strings.numberOfFollowing)
                             .font(.subheadline)
                             .fontWeight(.semibold)
@@ -83,6 +61,7 @@ struct PersonalPageView: View {
                 Spacer()
             }
             HStack {
+                
                 Text(Strings.pseudonym)
                     .font(.footnote)
                     .fontWeight(.semibold)
@@ -92,6 +71,7 @@ struct PersonalPageView: View {
             }
             
             HStack {
+                
                 Spacer()
                 Button(action: {}) {
                     Text(Strings.editLabel)
@@ -127,6 +107,7 @@ struct PersonalPageView: View {
                 Spacer()
             }
             VStack(alignment: .leading) {
+                
                 Text(Strings.selectedStories)
                     .font(.footnote)
                     .fontWeight(.medium)
@@ -135,6 +116,7 @@ struct PersonalPageView: View {
                     .fontWeight(.light)
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
+                        
                         StoriesViewButton(action: {},
                                           strokeColor: .gray,
                                           widthFrame: 25,
@@ -157,6 +139,7 @@ struct PersonalPageView: View {
             }
             .padding(.horizontal)
             HStack(spacing: 35) {
+                
                 Spacer()
                 Image.squareshapeSplit3x3System
                     .font(.title2)
@@ -175,6 +158,39 @@ struct PersonalPageView: View {
                         .border(Color.white)
                         .clipped()
                 }
+            }
+        }
+    }
+}
+
+private struct HeaderView: View {
+    var body: some View {
+        HStack() {
+            
+            Button(action: {}) {
+                Text(Strings.nameAcountWithoutUnderscore)
+                    .font(.system(size: 20, weight: .heavy, design: .rounded))
+                    .foregroundColor(.black)
+                    .padding(.horizontal)
+            }
+            .buttonStyle(.plain)
+            
+            HStack(spacing: 1) {
+                
+                Spacer()
+                Button(action: {}) {
+                    Image.plusAppSystem
+                        .imageModified(size: 20, weight: .medium, design: .rounded)
+                }
+                .buttonStyle(.plain)
+                
+                Button(action: {}) {
+                    Image.moreInformation
+                        .resizable()
+                        .imageModified(width: 20, height: 20)
+                }
+                .padding(.horizontal)
+                .buttonStyle(.plain)
             }
         }
     }

@@ -6,22 +6,36 @@ struct StartView: View {
     @ObservedObject var startViewModel = StartViewModel()
     @State private var isLoading = false
     
+    
     var body: some View {
+        
         NavigationView {
+            
             VStack {
-                headerView
+                
+                HeaderView()
                 Spacer()
+                
                 ScrollView {
                     StoriesView()
                     postView
-                }.loadingModifier(isLoading: $isLoading)
+                }
+                .loadingModifier(isLoading: $isLoading)
             }
         }
         .onAppear(perform: startViewModel.uploadingDataForInstagramFeed)
         .navigationBarHidden(true)
     }
     
-    private var headerView: some View {
+    private var postView: some View {
+        PostView(startViewModel: startViewModel)
+    }
+    
+    
+}
+
+private struct HeaderView: View  {
+    var body: some View {
         HStack {
             Button(action: {}) {
                 Text(Strings.instagramTitle)
@@ -31,6 +45,7 @@ struct StartView: View {
                     .padding(.horizontal)
             }
             Spacer()
+            
             HStack(spacing: 20) {
                 
                 NavigationLink(destination: LikeView()) {
@@ -48,92 +63,39 @@ struct StartView: View {
             .padding(.horizontal)
         }
     }
+}
+
+private struct PostView: View {
+    @ObservedObject var startViewModel: StartViewModel
     
-    private var postView: some View {
+    var body: some View {
         VStack {
             ForEach(startViewModel.posts, id: \.id) { post in
                 Button(action: {}) {
-                    postRowView(post: post)
+                    PostRowView(post: post)
                 }
                 .buttonStyle(.plain)
             }
         }
     }
+}
+
+private struct PostRowView: View {
+    let post: DataObject
     
-    private func postRowView(post: DataObject) -> some View {
-        
+    var body: some View {
         VStack(alignment: .leading) {
-            avatarAndUsername
+            AvatarAndUsernameView()
             AsyncImage(url: URL(string: post.media_url ?? "")) { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
                 
-                panelOfReactionsToThePost
-                postDescription
+                PanelOfReactionsToThePostView()
+                PostDescriptionView()
                 
             } placeholder: {
                 Text(Strings.errorPostNotFound)
             }
-            
-        }
-    }
-    
-    private var panelOfReactionsToThePost: some View {
-        HStack(spacing: 5) {
-            Button(action: {}) {
-                Image.heartSystem
-                    .systemImageModified(size: 20, weight: .bold)
-            }
-            
-            NavigationLink(destination: CommentsView()) {
-                Image.messageSystem
-                    .systemImageModified(size: 20, weight: .bold)
-            }
-            
-            NavigationLink(destination: DirectView()) {
-                Image.paperplaneSystem
-                    .systemImageModified(size: 20, weight: .bold)
-            }
-            
-            Spacer()
-            
-            Button(action: {}) {
-                Image.bookmarkSystem
-                    .systemImageModified(size: 20, weight: .bold)
-            }
-        }
-    }
-    
-    private var postDescription: some View {
-        VStack(alignment: .leading) {
-            Text(Strings.numberOfLikes)
-                .font(.system(size: 15, weight: .medium, design: .default))
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            Text(Strings.nameAcountWithUnderscore + " " + Strings.someInformation)
-                .font(.system(size: 15, weight: .medium, design: .default))
-            
-            NavigationLink(destination: CommentsView()) {
-                Text(Strings.viewAllCommentsLabel + "( \(Strings.numberOfComments))")
-                    .font(.system(size: 15, weight: .medium, design: .default))
-                    .foregroundColor(.gray)
-            }
-            
-            Text(Strings.someTimeAgoLabel)
-                .font(.system(size: 15, weight: .medium, design: .default))
-                .foregroundColor(.gray)
-        }
-        .padding(.horizontal, 5)
-    }
-    
-    private var avatarAndUsername: some View {
-        HStack {
-            Image.userIcon
-                .resizable()
-                .imageModified(aspectRatio: .fit, width: 30, height: 30, paddingLength: 5)
-                .clipShape(Circle())
-            Text(Strings.nameAcountWithUnderscore)
-            Spacer()
         }
     }
 }

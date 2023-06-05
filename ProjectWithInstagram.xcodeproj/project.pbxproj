@@ -55,12 +55,19 @@
 		ACB8A0662A0BCC8100D16062 /* ActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB8A0652A0BCC8100D16062 /* ActionButtons.swift */; };
 		ACBC67A62A262E3400B1BAFA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACBC67A82A262E3400B1BAFA /* Localizable.strings */; };
 		ACBC67AB2A26390B00B1BAFA /* Localizable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACBC67AA2A26390B00B1BAFA /* Localizable+Extensions.swift */; };
+		ACC323572A2E07A900E5794D /* LoadingModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC323562A2E07A900E5794D /* LoadingModifier.swift */; };
+		ACC323592A2E084300E5794D /* SystemImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC323582A2E084300E5794D /* SystemImageModifier.swift */; };
+		ACC3235D2A2E08C600E5794D /* StringsModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3235C2A2E08C600E5794D /* StringsModifier.swift */; };
+		ACC3235F2A2E091100E5794D /* ImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3235E2A2E091100E5794D /* ImageModifier.swift */; };
+		ACC323632A2E0FDA00E5794D /* PanelOfReactionsToThePostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC323622A2E0FDA00E5794D /* PanelOfReactionsToThePostView.swift */; };
+		ACC323662A2E118A00E5794D /* PostDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC323652A2E118A00E5794D /* PostDescriptionView.swift */; };
+		ACC323682A2E128A00E5794D /* AvatarAndUsernameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC323672A2E128A00E5794D /* AvatarAndUsernameView.swift */; };
+		ACC3236B2A2E239600E5794D /* SearchDataTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC3236A2A2E239600E5794D /* SearchDataTextFieldView.swift */; };
 		ACEBDBFB2A1B928F000DD021 /* ModelForJSONRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDBFA2A1B928F000DD021 /* ModelForJSONRemote.swift */; };
 		ACEBDBFD2A1B9638000DD021 /* FeedUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDBFC2A1B9638000DD021 /* FeedUseCase.swift */; };
 		ACEBDBFF2A1B96AB000DD021 /* FeedRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDBFE2A1B96AB000DD021 /* FeedRepositoryProtocol.swift */; };
 		ACEBDC052A1BACC4000DD021 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC042A1BACC4000DD021 /* APIService.swift */; };
 		ACEBDC072A1CD711000DD021 /* Image+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC062A1CD711000DD021 /* Image+Extensions.swift */; };
-		ACEBDC152A1F9B30000DD021 /* Modifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACEBDC142A1F9B30000DD021 /* Modifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,12 +126,19 @@
 		ACBC67A72A262E3400B1BAFA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACBC67A92A262E5E00B1BAFA /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
 		ACBC67AA2A26390B00B1BAFA /* Localizable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Localizable+Extensions.swift"; sourceTree = "<group>"; };
+		ACC323562A2E07A900E5794D /* LoadingModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingModifier.swift; sourceTree = "<group>"; };
+		ACC323582A2E084300E5794D /* SystemImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemImageModifier.swift; sourceTree = "<group>"; };
+		ACC3235C2A2E08C600E5794D /* StringsModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsModifier.swift; sourceTree = "<group>"; };
+		ACC3235E2A2E091100E5794D /* ImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageModifier.swift; sourceTree = "<group>"; };
+		ACC323622A2E0FDA00E5794D /* PanelOfReactionsToThePostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelOfReactionsToThePostView.swift; sourceTree = "<group>"; };
+		ACC323652A2E118A00E5794D /* PostDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDescriptionView.swift; sourceTree = "<group>"; };
+		ACC323672A2E128A00E5794D /* AvatarAndUsernameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarAndUsernameView.swift; sourceTree = "<group>"; };
+		ACC3236A2A2E239600E5794D /* SearchDataTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchDataTextFieldView.swift; sourceTree = "<group>"; };
 		ACEBDBFA2A1B928F000DD021 /* ModelForJSONRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelForJSONRemote.swift; sourceTree = "<group>"; };
 		ACEBDBFC2A1B9638000DD021 /* FeedUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedUseCase.swift; sourceTree = "<group>"; };
 		ACEBDBFE2A1B96AB000DD021 /* FeedRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRepositoryProtocol.swift; sourceTree = "<group>"; };
 		ACEBDC042A1BACC4000DD021 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		ACEBDC062A1CD711000DD021 /* Image+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extensions.swift"; sourceTree = "<group>"; };
-		ACEBDC142A1F9B30000DD021 /* Modifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,7 +185,6 @@
 			isa = PBXGroup;
 			children = (
 				AC05CE6B29F8662B00465A50 /* FeedRepository.swift */,
-				ACEBDC042A1BACC4000DD021 /* APIService.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -375,7 +388,7 @@
 			children = (
 				ACB89FDD2A02896800D16062 /* Common */,
 				ACB89FF32A03DAF300D16062 /* Stories */,
-				ACBC67A22A26137B00B1BAFA /* Modifier */,
+				ACBC67A22A26137B00B1BAFA /* Modifiers */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -388,6 +401,8 @@
 				ACB8A0022A0535CB00D16062 /* SearchDataTextField.swift */,
 				ACB8A0052A053F2F00D16062 /* SendMessageButton.swift */,
 				ACB8A0092A092D0800D16062 /* SubscribeButton.swift */,
+				ACC323692A2E238200E5794D /* SearchDataTextFieldView */,
+				ACC323642A2E113700E5794D /* VisualAppearanceOfPosts */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -416,6 +431,7 @@
 			children = (
 				AC00F0172A1749C500DCAE93 /* Repositories */,
 				AC00F0212A178E4500DCAE93 /* Models */,
+				ACC323552A2E048F00E5794D /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -501,12 +517,15 @@
 			path = Reels;
 			sourceTree = "<group>";
 		};
-		ACBC67A22A26137B00B1BAFA /* Modifier */ = {
+		ACBC67A22A26137B00B1BAFA /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
-				ACEBDC142A1F9B30000DD021 /* Modifier.swift */,
+				ACC323562A2E07A900E5794D /* LoadingModifier.swift */,
+				ACC323582A2E084300E5794D /* SystemImageModifier.swift */,
+				ACC3235C2A2E08C600E5794D /* StringsModifier.swift */,
+				ACC3235E2A2E091100E5794D /* ImageModifier.swift */,
 			);
-			path = Modifier;
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		ACBC67A32A262DB600B1BAFA /* Localize */ = {
@@ -515,6 +534,32 @@
 				ACBC67A82A262E3400B1BAFA /* Localizable.strings */,
 			);
 			path = Localize;
+			sourceTree = "<group>";
+		};
+		ACC323552A2E048F00E5794D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				ACEBDC042A1BACC4000DD021 /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		ACC323642A2E113700E5794D /* VisualAppearanceOfPosts */ = {
+			isa = PBXGroup;
+			children = (
+				ACC323622A2E0FDA00E5794D /* PanelOfReactionsToThePostView.swift */,
+				ACC323652A2E118A00E5794D /* PostDescriptionView.swift */,
+				ACC323672A2E128A00E5794D /* AvatarAndUsernameView.swift */,
+			);
+			path = VisualAppearanceOfPosts;
+			sourceTree = "<group>";
+		};
+		ACC323692A2E238200E5794D /* SearchDataTextFieldView */ = {
+			isa = PBXGroup;
+			children = (
+				ACC3236A2A2E239600E5794D /* SearchDataTextFieldView.swift */,
+			);
+			path = SearchDataTextFieldView;
 			sourceTree = "<group>";
 		};
 		E25882E091D2CE9EC40ADDF8 /* Frameworks */ = {
@@ -656,17 +701,24 @@
 				ACB89FD12A0197F400D16062 /* StartView.swift in Sources */,
 				ACB89FF72A03DD4900D16062 /* ModelForJSON.swift in Sources */,
 				AC05CE5629F85D4A00465A50 /* TabViews.swift in Sources */,
+				ACC323592A2E084300E5794D /* SystemImageModifier.swift in Sources */,
 				ACB89FD92A019BDE00D16062 /* PersonalPageView.swift in Sources */,
 				ACB89FE02A028A2F00D16062 /* StoriesViewButton.swift in Sources */,
+				ACC3235D2A2E08C600E5794D /* StringsModifier.swift in Sources */,
 				ACB8A02B2A0A735600D16062 /* ReelsModel.swift in Sources */,
 				ACB89FE62A02F08500D16062 /* Color+Extensions.swift in Sources */,
 				ACB89FD32A01991E00D16062 /* SearchView.swift in Sources */,
 				ACB8A0662A0BCC8100D16062 /* ActionButtons.swift in Sources */,
+				ACC323632A2E0FDA00E5794D /* PanelOfReactionsToThePostView.swift in Sources */,
+				ACC3236B2A2E239600E5794D /* SearchDataTextFieldView.swift in Sources */,
 				ACB8A0082A0917CA00D16062 /* LikeView.swift in Sources */,
 				ACEBDBFF2A1B96AB000DD021 /* FeedRepositoryProtocol.swift in Sources */,
 				ACEBDBFD2A1B9638000DD021 /* FeedUseCase.swift in Sources */,
+				ACC323662A2E118A00E5794D /* PostDescriptionView.swift in Sources */,
+				ACC323682A2E128A00E5794D /* AvatarAndUsernameView.swift in Sources */,
 				ACBC67AB2A26390B00B1BAFA /* Localizable+Extensions.swift in Sources */,
 				ACB8A0002A052F4A00D16062 /* DirectView.swift in Sources */,
+				ACC3235F2A2E091100E5794D /* ImageModifier.swift in Sources */,
 				ACB89FD52A0199C000D16062 /* AddContentView.swift in Sources */,
 				ACB89FEC2A03D6B400D16062 /* Font+Extensions.swift in Sources */,
 				ACEBDBFB2A1B928F000DD021 /* ModelForJSONRemote.swift in Sources */,
@@ -674,6 +726,7 @@
 				AC05CE6C29F8662B00465A50 /* FeedRepository.swift in Sources */,
 				ACEBDC052A1BACC4000DD021 /* APIService.swift in Sources */,
 				AC8B38A32A1214C700FB2B10 /* Post.swift in Sources */,
+				ACC323572A2E07A900E5794D /* LoadingModifier.swift in Sources */,
 				AC05CE7129F8700500465A50 /* Strings.swift in Sources */,
 				AC8B38A92A126B1F00FB2B10 /* StoriesView.swift in Sources */,
 				AC00F0162A17451600DCAE93 /* AddContentViewModel.swift in Sources */,
@@ -685,7 +738,6 @@
 				AC05CE5429F85D4A00465A50 /* ProjectWithInstagramApp.swift in Sources */,
 				AC3ADED42A15081000C4BAEB /* StoriesViewFullScreen.swift in Sources */,
 				AC8B38A62A12596A00FB2B10 /* LoaderForStories.swift in Sources */,
-				ACEBDC152A1F9B30000DD021 /* Modifier.swift in Sources */,
 				ACB8A00A2A092D0800D16062 /* SubscribeButton.swift in Sources */,
 				AC00F03E2A17BA9300DCAE93 /* CommentsView.swift in Sources */,
 				ACB8A0062A053F2F00D16062 /* SendMessageButton.swift in Sources */,

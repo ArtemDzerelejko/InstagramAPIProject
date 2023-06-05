@@ -6,23 +6,40 @@ struct CommentsView: View {
     var body: some View {
         
         VStack {
-            subscribeButton
+            SubscribeButtonView()
         }
-        .navigationBarItems(leading: navigationLeadingItems)
-        .navigationBarItems(trailing: navigationTrailingItems)
+        .navigationBarItems(leading: NavigationLeadingItems())
+        .navigationBarItems(trailing: NavigationTrailingItems())
     }
-    
-    private var subscribeButton: some View {
+}
+
+private struct SubscribeButtonView: View {
+    var body: some View {
         ScrollView(showsIndicators: false) {
             ForEach(0..<20) { _ in
-                SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false, nameAcountWithUnderscore: Strings.nameAcountWithUnderscore, name: Strings.commentsInLowerCase, withSmallLetterFollows: "", follows: "", showFollowsButton: false)
+                SubscribeButton(actionForMainButton: {},
+                                actionForStoriesViewButton: {},
+                                actionForFollowsButton: {},
+                                actionForHeartButton: {},
+                                actionForRemoveAUserFromTheRecommendationList: {},
+                                xmarkVisible: false,
+                                nameAcountWithUnderscore: Strings.nameAcountWithUnderscore,
+                                name: Strings.commentsInLowerCase,
+                                withSmallLetterFollows: "",
+                                follows: "",
+                                showFollowsButton: false)
             }
             .padding(.horizontal)
-        }.padding(.top)
+        }
+        .padding(.top)
     }
-    
-    private var navigationLeadingItems: some View {
+}
+
+
+private struct NavigationLeadingItems: View {
+    var body: some View {
         HStack {
+            
             Button(action: {}) {
                 Text(Strings.commentsInCapitalLetters)
                     .foregroundColor(.black)
@@ -32,21 +49,25 @@ struct CommentsView: View {
             .buttonStyle(.plain)
         }
     }
-    
-    private var navigationTrailingItems: some View {
+}
+
+private struct NavigationTrailingItems: View {
+    var body: some View {
         HStack {
+            
             NavigationLink(destination: DirectView()) {
                 Image.paperplaneSystem
                     .font(.system(size: 15, weight: .bold, design: .default))
                     .foregroundColor(.black)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 2)
-            }.buttonStyle(.plain)
-                .navigationTitle("")
+            }
+            .buttonStyle(.plain)
+            .navigationTitle("")
         }
     }
-    
 }
+
 
 struct Comments_Previews: PreviewProvider {
     static var previews: some View {

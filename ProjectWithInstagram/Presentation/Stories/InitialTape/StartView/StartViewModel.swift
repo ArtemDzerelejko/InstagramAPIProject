@@ -28,7 +28,8 @@ final class StartViewModel: ObservableObject {
                 self?.isLoading = false
                 guard let fetchedPosts = result.data else { return }
                 self?.posts = fetchedPosts
-            }.store(in: &cancellables)
+            }
+            .store(in: &cancellables)
     }
     
     func likeButtonTapped(for post: DataObject) {}

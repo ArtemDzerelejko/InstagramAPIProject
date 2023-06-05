@@ -47,6 +47,7 @@ struct StoriesViewButtonWithPlusIcon: View {
                 Text(textUnderButton)
                     .foregroundColor(.black)
             }
-        }.buttonStyle(.plain)
+        }
+        .buttonStyle(.plain)
     }
 }

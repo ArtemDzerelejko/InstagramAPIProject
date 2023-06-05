@@ -2,19 +2,16 @@
 import SwiftUI
 
 struct StoriesViewFullScreen: View {
-    
     @Binding var show: Bool
     var currentPost: Post?
     
     var body: some View {
-        
         if show {
             ZStack {
-                
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 if let currentPost = currentPost {
-                    storyContent(for: currentPost)
+                    StoryContentView(show: $show, post: currentPost)
                 } else {
                     Text(Strings.errorNotFoundCurrentPost)
                         .foregroundColor(.white)
@@ -22,8 +19,13 @@ struct StoriesViewFullScreen: View {
             }
         }
     }
+}
+
+private struct StoryContentView: View {
+    @Binding var show: Bool
+    let post: Post
     
-    private func storyContent(for post: Post) -> some View {
+    var body: some View {
         ZStack(alignment: .topLeading) {
             GeometryReader { _ in
                 VStack {
@@ -32,8 +34,10 @@ struct StoriesViewFullScreen: View {
                         .aspectRatio(contentMode: .fit)
                 }
             }
+            
             VStack(spacing: 15) {
                 LoaderForStories(show: $show)
+                
                 HStack(spacing: 15) {
                     Image(post.proPic)
                         .resizable()
@@ -55,3 +59,4 @@ struct StoriesViewFullScreen: View {
         }
     }
 }
+

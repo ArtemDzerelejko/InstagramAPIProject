@@ -9,44 +9,52 @@ struct LikeView: View {
             
             LazyVStack {
                 
-                thisMonthSection
-                beforeSection
-                suggestedForYouSection
+                ThisMonthSectionView()
+                BeforeSectionView()
+                SuggestedForYouSectionView()
                 
             }
             .padding(.horizontal)
         }
         .listRowSeparator(.hidden)
-        .navigationBarItems(leading: notificationTitle)
+        .navigationBarItems(leading: NotificationTitle())
     }
-    
-    private var thisMonthSection: some View {
-        Section(header: sectionHeader(title: Strings.thisMonthLabel)) {
+}
+
+private struct ThisMonthSectionView: View {
+    var body: some View {
+        Section(header: SectionHeaderView(title: Strings.thisMonthLabel)) {
             ForEach(0..<5) { _ in
                 SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false)
             }
         }
     }
-    
-    private var beforeSection: some View {
-        Section(header: sectionHeader(title: Strings.beforeLabel)) {
+}
+
+private struct BeforeSectionView: View {
+    var body: some View {
+        Section(header: SectionHeaderView(title: Strings.beforeLabel)) {
             ForEach(0..<5) { _ in
                 SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: false, accentColorForFollows: .gray)
             }
         }
     }
-    
-    private var suggestedForYouSection: some View {
-        Section(header: sectionHeader(title: Strings.suggestedForYouLabel)) {
+}
+
+private struct SuggestedForYouSectionView: View {
+    var body: some View {
+        Section(header: SectionHeaderView(title: Strings.suggestedForYouLabel)) {
             ForEach(0..<5) { _ in
                 SubscribeButton(actionForMainButton: {}, actionForStoriesViewButton: {}, actionForFollowsButton: {}, actionForHeartButton: {}, actionForRemoveAUserFromTheRecommendationList: {}, xmarkVisible: true)
             }
         }
     }
+}
+
+private struct SectionHeaderView: View {
+    let title: String
     
-    
-    
-    private func sectionHeader(title: String) -> some View {
+    var body: some View {
         HStack {
             Text(title)
                 .stringsModifiers(size: 18,
@@ -56,8 +64,10 @@ struct LikeView: View {
             Spacer()
         }
     }
-    
-    private var notificationTitle: some View {
+}
+
+private struct NotificationTitle: View {
+    var body: some View {
         Text(Strings.notificationLabel)
             .stringsModifiers(size: 25,
                               weight: .bold,
@@ -65,7 +75,6 @@ struct LikeView: View {
                               paddingEdges: .horizontal,
                               paddingLength: -20)
     }
-    
 }
 
 struct LikeView_Previews: PreviewProvider {

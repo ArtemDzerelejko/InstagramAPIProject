@@ -3,7 +3,7 @@ import SwiftUI
 import Combine
 
 class StoriesViewModel: ObservableObject {
-    
+
     @Published var showFullScreen = false
     @Published var currentPost: Post?
     @Published var isStoryExpanded = false
@@ -14,22 +14,22 @@ class StoriesViewModel: ObservableObject {
         Post(id: 3, name: DataForStoriesView.name4, url: "story4", seen: false, proPic: "thumb4", loading: false),
         Post(id: 4, name: DataForStoriesView.name5, url: "story5", seen: false, proPic: "thumb5", loading: false)
     ]
-    
+
     func buttonToAddYourOwnStory() -> some View {
         StoriesViewButtonWithPlusIcon(action: {}, textUnderButton: Strings.youLabel, widthMainImage: 65, heightMainImage: 65, widthPlusImage: 12, heightPlusImage: 12)
     }
-    
+
     func storyItemView(post: Post) -> some View {
-        
+
         VStack(spacing: 8) {
-            
+
             ZStack {
-                
+
                 Image(post.proPic)
                     .resizable()
                     .frame(width: 65, height: 65)
                     .clipShape(Circle())
-                
+
                 if !post.seen {
                     Circle()
                         .trim(from: 0, to: 1)
@@ -41,28 +41,28 @@ class StoriesViewModel: ObservableObject {
                         .rotationEffect(.init(degrees: post.loading ? 360 : 0))
                 }
             }
-            
+
             Text(post.name)
                 .foregroundColor(.black)
                 .lineLimit(1)
         }
     }
-    
+
     func creatingAnAnimationForTheSelectedStory(post: Post) {
-        
+
         guard let index = data.firstIndex(where: { $0.id == post.id }) else {
             return
         }
-        
+
         withAnimation(Animation.default.speed(0.35).repeatForever(autoreverses: false)) {
             data[index].loading.toggle()
-            
+
             DispatchQueue.main.asyncAfter(deadline: .now() + (data[index].seen ? 0 : 1.2)) {
                 withAnimation(.default) {
                     self.currentPost = self.data[index]
                     self.showFullScreen.toggle()
                 }
-                
+
                 self.data[index].loading = false
                 self.data[index].seen = true
             }

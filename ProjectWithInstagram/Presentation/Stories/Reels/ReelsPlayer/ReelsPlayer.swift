@@ -64,6 +64,7 @@ struct ReelsPlayer: View {
                         VStack(alignment: .leading, spacing: 10) {
                             
                             HStack(spacing: 15) {
+                                
                                 Image.houseSystem
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)

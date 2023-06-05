@@ -8,16 +8,20 @@ struct ActionButton: View {
     var body: some View {
         
         VStack(spacing: 25) {
-            likeButton
-            commentButton
-            sendMessageButton
-            moreButton
+            
+            LikeButton()
+            CommentButton()
+            SendMessageButtonView()
+            MoreButton()
         }
     }
-    
-    private var likeButton: some View {
+}
+
+private struct LikeButton: View {
+    var body: some View {
         Button {} label: {
             VStack(spacing: 10) {
+                
                 Image.suitHeartSystem
                     .font(.title)
                 Text(Strings.numberOfLikes)
@@ -25,10 +29,13 @@ struct ActionButton: View {
             }
         }
     }
-    
-    private var commentButton: some View {
+}
+
+private struct CommentButton: View {
+    var body: some View {
         Button {} label: {
             VStack(spacing: 10) {
+                
                 Image.bubbleRightSystem
                     .font(.title)
                 Text(Strings.numberOfComments)
@@ -36,17 +43,23 @@ struct ActionButton: View {
             }
         }
     }
-    
-    private var sendMessageButton: some View {
+}
+
+private struct SendMessageButtonView: View {
+    var body: some View {
         Button {} label: {
             VStack(spacing: 10) {
+                
                 Image.paperplaneSystem
                     .font(.title)
             }
         }
     }
-    
-    private var moreButton: some View {
+}
+
+
+private struct MoreButton: View {
+    var body: some View {
         Button {} label: {
             Image.moreInformation
                 .resizable()

@@ -19,6 +19,7 @@ struct StoriesViewButton: View {
         VStack {
             
             Button(action: action) {
+                
                 Image(systemName: pictureToDisplayInsideButton)
                     .resizable()
                     .frame(width: widthFrame, height: heightFrame)
@@ -35,7 +36,7 @@ struct StoriesViewButton: View {
                 .font(.footnote)
                 .fontWeight(.light)
                 .padding(.vertical, 1)
-            
-        }.buttonStyle(.plain)
+        }
+        .buttonStyle(.plain)
     }
 }

@@ -45,9 +45,10 @@ struct SubscribeButton: View {
                         Button(action: actionForFollowsButton) {
                             Text(follows)
                                 .font(.system(size: 17, weight: .medium))
-                        }.buttonStyle(.borderedProminent)
-                            .accentColor(accentColorForFollows)
-                            .padding(.vertical, -20)
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .accentColor(accentColorForFollows)
+                        .padding(.vertical, -20)
                     } else {
                         Button(action: actionForHeartButton) {
                             Image.heartSystem
@@ -71,7 +72,8 @@ struct SubscribeButton: View {
                 }
                 
             }
-        } .buttonStyle(.plain)
+        }
+        .buttonStyle(.plain)
     }
 }
 

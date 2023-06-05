@@ -41,7 +41,8 @@ struct SendMessageButton: View {
                             .font(.system(size: 20, weight: .heavy, design: .monospaced))
                             .foregroundColor(.gray)
                             .padding(.horizontal)
-                    }.buttonStyle(.plain)
+                    }
+                    .buttonStyle(.plain)
                     
                 }
                 
