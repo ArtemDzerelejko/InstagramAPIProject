@@ -3,12 +3,12 @@ import SwiftUI
 
 struct SearchView: View {
     @StateObject private var searchViewModel = SearchViewModel()
-    let columns = [
+    private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
-    let imageDimension = UIScreen.main.bounds.width / 3
+    private let imageDimension = UIScreen.main.bounds.width / 3
     @State private var isLoading = false
     
     var body: some View {
@@ -16,36 +16,45 @@ struct SearchView: View {
         NavigationView {
             
             VStack {
+                
                 SearchDataTextFieldView(title: Strings.searchTitle, text: $searchViewModel.searchValue)
                 ScrollView {
-                    postListView
+                    PostListView(searchViewModel: searchViewModel)
                 }
                 .loadingModifier(isLoading: $isLoading)
             }
         }
         .onAppear(perform: searchViewModel.uploadingDataForInstagramFeed)
     }
-    
+}
 
+private struct PostListView: View {
+    @ObservedObject var searchViewModel: SearchViewModel
     
-    private var postListView: some View {
+    var body: some View {
         
         VStack {
+            
             ForEach(searchViewModel.posts, id: \.id) { post in
                 if searchViewModel.searchValue == post.caption {
                     NavigationLink(destination: PersonalPageView()) {
-                        postRowView(post: post)
+                        PostRowView(post: post)
                     }
                     .buttonStyle(.plain)
                 }
             }
         }
     }
+}
+
+private struct PostRowView: View {
+    var post: DataObject
     
-    private func postRowView(post: DataObject) -> some View {
+    var body: some View {
         
         VStack(alignment: .leading) {
-           AvatarAndUsernameView()
+            
+            AvatarAndUsernameView()
             AsyncImage(url: URL(string: post.media_url ?? "")) { image in
                 image.resizable()
                     .aspectRatio(contentMode: .fit)
@@ -59,7 +68,6 @@ struct SearchView: View {
         }
     }
 }
-
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {

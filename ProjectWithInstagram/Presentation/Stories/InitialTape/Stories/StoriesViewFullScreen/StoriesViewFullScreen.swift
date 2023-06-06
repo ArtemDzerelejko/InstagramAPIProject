@@ -7,7 +7,9 @@ struct StoriesViewFullScreen: View {
     
     var body: some View {
         if show {
+            
             ZStack {
+                
                 Color.black.edgesIgnoringSafeArea(.all)
                 
                 if let currentPost = currentPost {
@@ -26,9 +28,13 @@ private struct StoryContentView: View {
     let post: Post
     
     var body: some View {
+        
         ZStack(alignment: .topLeading) {
+            
             GeometryReader { _ in
+                
                 VStack {
+                    
                     Image(post.url)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -36,9 +42,11 @@ private struct StoryContentView: View {
             }
             
             VStack(spacing: 15) {
+                
                 LoaderForStories(show: $show)
                 
                 HStack(spacing: 15) {
+                    
                     Image(post.proPic)
                         .resizable()
                         .frame(width: 55, height: 55)

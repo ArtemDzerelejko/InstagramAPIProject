@@ -55,7 +55,9 @@ private struct SectionHeaderView: View {
     let title: String
     
     var body: some View {
+        
         HStack {
+            
             Text(title)
                 .stringsModifiers(size: 18,
                                   weight: .heavy,

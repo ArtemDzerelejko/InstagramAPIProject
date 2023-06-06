@@ -8,10 +8,9 @@ struct SendMessageButton: View {
     let actionForCameraButton: () -> Void
     
     var body: some View {
-        
         Button(action: actionForMainButton) {
             
-            HStack {
+            HStack(spacing: 10) {
                 
                 StoriesViewButton(action: actionForStoriesViewButton, strokeColor: .black, backgroundColor: .gray)
                     .padding(.vertical)
@@ -19,36 +18,28 @@ struct SendMessageButton: View {
                 
                 VStack(alignment: .leading, spacing: 0.5) {
                     
-                    Text (Strings.nameAcountWithUnderscore)
+                    Text(Strings.nameAcountWithUnderscore)
                         .font(.system(size: 17, weight: .semibold))
-                        .padding(.vertical, -25)
                         .foregroundColor(.black)
-                        .padding(.horizontal, -10)
+                        .lineLimit(1)
                     
                     Text(Strings.wasOnlineSometimeAgo)
                         .font(.system(size: 14))
                         .foregroundColor(.gray)
-                        .padding(.horizontal, -10)
                         .lineLimit(1)
-                    
                 }
                 
-                HStack {
-                    
-                    Spacer()
-                    Button(action: actionForCameraButton) {
-                        Image(systemName: "camera")
-                            .font(.system(size: 20, weight: .heavy, design: .monospaced))
-                            .foregroundColor(.gray)
-                            .padding(.horizontal)
-                    }
-                    .buttonStyle(.plain)
-                    
-                }
+                Spacer()
                 
+                Button(action: actionForCameraButton) {
+                    Image(systemName: "camera")
+                        .font(.system(size: 20, weight: .heavy))
+                        .foregroundColor(.gray)
+                        .padding(.horizontal)
+                }
+                .buttonStyle(.plain)
             }
         }
         .buttonStyle(.plain)
     }
 }
-

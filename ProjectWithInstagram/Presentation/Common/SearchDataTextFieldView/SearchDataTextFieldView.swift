@@ -7,8 +7,7 @@ struct SearchDataTextFieldView: View {
     let text: Binding<String>
     var body: some View {
         HStack {
-            SearchDataTextField(title: title,
-                                text: text)
+            SearchDataTextField(title: title, text: text)
         }
     }
 }

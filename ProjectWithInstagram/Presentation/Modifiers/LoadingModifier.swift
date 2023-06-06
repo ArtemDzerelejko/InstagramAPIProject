@@ -7,7 +7,9 @@ struct LoadingModifier: ViewModifier {
     @Binding var isLoading: Bool
     
     func body(content: Content) -> some View {
+        
         ZStack {
+            
             content
             if isLoading {
                 ProgressView()

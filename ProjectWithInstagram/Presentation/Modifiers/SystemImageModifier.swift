@@ -2,14 +2,14 @@
 import Foundation
 import SwiftUI
 
-
 struct SystemImageModifier: ViewModifier {
-    var size: CGFloat?
-    var weight: Font.Weight?
-    var design: Font.Design?
-    var fontWeight: Font.Weight?
-    var cornerRadius: CGFloat?
-    var foregroundColor: Color?
+    @State var size: CGFloat?
+    @State var weight: Font.Weight?
+    @State var design: Font.Design?
+    @State var fontWeight: Font.Weight?
+    @State var cornerRadius: CGFloat?
+    @State var foregroundColor: Color?
+    
     func body(content: Content) -> some View {
         content
             .font(.system(size: size ?? 17, weight: weight, design: design))

@@ -1,9 +1,10 @@
+
 import Foundation
 import Combine
 
 final class FeedRepository: FeedRepositoryProtocol {
     
-    let apiService = APIService()
+    private let apiService = APIService()
     
     func creatingRequestToTheServerToGetInstagramData() -> AnyPublisher<ModelForJSON, Error> {
         guard let url = apiService.creatingURLToRetrieveData() else {

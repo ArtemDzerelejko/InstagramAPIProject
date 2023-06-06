@@ -4,12 +4,12 @@ import SwiftUI
 struct StoriesViewButtonWithPlusIcon: View {
     
     let action: () -> Void
-    @State var mainImage = "human"
-    @State var textUnderButton = ""
-    let widthMainImage: CGFloat
-    let heightMainImage: CGFloat
-    let widthPlusImage: CGFloat
-    let heightPlusImage: CGFloat
+    @State private var mainImage = "human"
+    @State private var textUnderButton = ""
+    @State private var widthMainImage: CGFloat
+    @State private var heightMainImage: CGFloat
+    @State private var widthPlusImage: CGFloat
+    @State private var heightPlusImage: CGFloat
     
     init(action: @escaping () -> Void, mainImage: String = "human", textUnderButton: String = "", widthMainImage: CGFloat, heightMainImage: CGFloat, widthPlusImage: CGFloat, heightPlusImage: CGFloat) {
         self.action = action

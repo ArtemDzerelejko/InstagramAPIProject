@@ -8,9 +8,9 @@ struct ReelsView: View {
         static let fileFormat: String = "mp4"
     }
     
-    @State var currentReel = ""
+    @State private var currentReel = ""
     
-    @State var reels = ReelsModelJSON.map { item -> Reel in
+    @State private var reels = ReelsModelJSON.map { item -> Reel in
         
         let url = Bundle.main.path(forResource: item.url, ofType: Constans.fileFormat) ?? ""
         
@@ -22,40 +22,46 @@ struct ReelsView: View {
     var body: some View {
         GeometryReader { proxy in
             let size = proxy.size
-            contentView(size: size)
+            ContentView(reels: $reels, currentReel: $currentReel, size: size)
                 .onAppear{
                     currentReel = reels.first?.id ?? ""
                 }
                 .onDisappear{
                     pauseCurrentReel()
                 }
-        }.ignoresSafeArea(.all, edges: .top)
-            .background(Color.black)
+        }
+        .ignoresSafeArea(.all, edges: .top)
+        .background(Color.black)
     }
     
-    private func contentView(size: CGSize) -> some View {
-        TabView(selection: $currentReel) {
-            ForEach($reels){$reel in
-                ReelsPlayer(reel: $reel, currentReel: $currentReel)
-                    .frame(width: size.width)
-                    .rotationEffect(.init(degrees: -90))
-                    .ignoresSafeArea()
-                    .tag(reel.id)
-                
-            }
-        }
-        
-        .rotationEffect(.init(degrees: 90))
-        .frame(width: size.height)
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .frame(width: size.width)
-    }
     
     private func pauseCurrentReel() {
         guard let reel = reels.first(where: { $0.id == currentReel }) else {
             return
         }
         reel.player?.pause()
+    }
+}
+
+private struct ContentView: View {
+    @Binding var reels: [Reel]
+    @Binding var currentReel: String
+    var size: CGSize
+    
+    var body: some View {
+        TabView(selection: $currentReel) {
+            ForEach($reels) { $reel in
+                ReelsPlayer(reel: $reel, currentReel: $currentReel)
+                    .frame(width: size.width)
+                    .rotationEffect(.init(degrees: -90))
+                    .ignoresSafeArea()
+                    .tag(reel.id)
+            }
+        }
+        .rotationEffect(.init(degrees: 90))
+        .frame(width: size.height)
+        .tabViewStyle(.page(indexDisplayMode: .never))
+        .frame(width: size.width)
     }
 }
 

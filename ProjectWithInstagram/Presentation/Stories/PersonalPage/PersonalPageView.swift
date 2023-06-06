@@ -2,28 +2,63 @@
 import SwiftUI
 
 struct PersonalPageView: View {
-    
-    @State var cornerRadius: CGFloat = 7
     @State private var selectedTabIndex = 0
+    var body: some View {
+        
+        VStack {
+            
+            HeaderView()
+            ScrollView(.vertical, showsIndicators: false) {
+                Content()
+            }
+        }
+    }
+}
+
+private struct HeaderView: View {
+    var body: some View {
+        
+        HStack() {
+            
+            Button(action: {}) {
+                Text(Strings.nameAcountWithoutUnderscore)
+                    .font(.system(size: 20, weight: .heavy, design: .rounded))
+                    .foregroundColor(.black)
+                    .padding(.horizontal)
+            }
+            .buttonStyle(.plain)
+            
+            HStack(spacing: 1) {
+                
+                Spacer()
+                Button(action: {}) {
+                    Image.plusAppSystem
+                        .imageModified(size: 20, weight: .medium, design: .rounded)
+                }
+                .buttonStyle(.plain)
+                
+                Button(action: {}) {
+                    Image.moreInformation
+                        .resizable()
+                        .imageModified(width: 20, height: 20)
+                }
+                .padding(.horizontal)
+                .buttonStyle(.plain)
+            }
+        }
+    }
+}
+
+private struct Content: View {
+    @State private var cornerRadius: CGFloat = 7
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
+    
     let imageDimension = UIScreen.main.bounds.width / 3
-    
-    
     var body: some View {
-        
-        VStack {
-            HeaderView()
-            ScrollView(.vertical, showsIndicators: false) {
-                content
-            }
-        }
-    }
-    
-    private var content: some View {
         VStack(alignment: .leading) {
             
             HStack {
@@ -126,6 +161,7 @@ struct PersonalPageView: View {
                                           foregroundColor: .black,
                                           strokeLineWidth: 1,
                                           textBelowTheButton: Strings.textAddBelowStoriesViewButton)
+                        
                         ForEach(0..<6) { _ in
                             StoriesViewButton(action: {},
                                               strokeColor: .white,
@@ -161,40 +197,9 @@ struct PersonalPageView: View {
             }
         }
     }
+    
 }
 
-private struct HeaderView: View {
-    var body: some View {
-        HStack() {
-            
-            Button(action: {}) {
-                Text(Strings.nameAcountWithoutUnderscore)
-                    .font(.system(size: 20, weight: .heavy, design: .rounded))
-                    .foregroundColor(.black)
-                    .padding(.horizontal)
-            }
-            .buttonStyle(.plain)
-            
-            HStack(spacing: 1) {
-                
-                Spacer()
-                Button(action: {}) {
-                    Image.plusAppSystem
-                        .imageModified(size: 20, weight: .medium, design: .rounded)
-                }
-                .buttonStyle(.plain)
-                
-                Button(action: {}) {
-                    Image.moreInformation
-                        .resizable()
-                        .imageModified(width: 20, height: 20)
-                }
-                .padding(.horizontal)
-                .buttonStyle(.plain)
-            }
-        }
-    }
-}
 
 struct PersonalPageView_Previews: PreviewProvider {
     static var previews: some View {

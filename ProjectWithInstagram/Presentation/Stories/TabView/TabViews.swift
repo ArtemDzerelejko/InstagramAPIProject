@@ -6,34 +6,27 @@ struct TabViews: View {
     var body: some View {
         
         TabView {
-            StartView().tabItem {
-                
-                Image.houseSystem
-                
-            }
-            SearchView().tabItem {
-                
-                Image.magnifyingglassSystem
-            }
+            StartView()
+                .tabItem {
+                    Image.houseSystem }
+            SearchView()
+                .tabItem {
+                    Image.magnifyingglassSystem }
             
-            AddContentView().tabItem {
-                
-                Image.plusAppSystem
-            }
+            AddContentView()
+                .tabItem {
+                    Image.plusAppSystem }
             
-            ReelsView().tabItem {
-                
-                Image.playSquareSystem
-                
-            }
+            ReelsView()
+                .tabItem {
+                    Image.playSquareSystem }
             
-            PersonalPageView().tabItem {
-                
-                Image.personCircleFillSystem
-            }
+            PersonalPageView()
+                .tabItem {
+                    Image.personCircleFillSystem }
         }
         .onAppear() {
-           UITabBar.appearance().unselectedItemTintColor = .black
+            UITabBar.appearance().unselectedItemTintColor = .black
         }
         .accentColor(Color.black)
     }

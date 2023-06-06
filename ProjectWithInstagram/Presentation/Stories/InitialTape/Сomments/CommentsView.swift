@@ -6,6 +6,7 @@ struct CommentsView: View {
     var body: some View {
         
         VStack {
+            
             SubscribeButtonView()
         }
         .navigationBarItems(leading: NavigationLeadingItems())
@@ -15,7 +16,9 @@ struct CommentsView: View {
 
 private struct SubscribeButtonView: View {
     var body: some View {
+        
         ScrollView(showsIndicators: false) {
+            
             ForEach(0..<20) { _ in
                 SubscribeButton(actionForMainButton: {},
                                 actionForStoriesViewButton: {},
@@ -38,6 +41,7 @@ private struct SubscribeButtonView: View {
 
 private struct NavigationLeadingItems: View {
     var body: some View {
+        
         HStack {
             
             Button(action: {}) {
@@ -53,6 +57,7 @@ private struct NavigationLeadingItems: View {
 
 private struct NavigationTrailingItems: View {
     var body: some View {
+        
         HStack {
             
             NavigationLink(destination: DirectView()) {

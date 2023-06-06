@@ -4,7 +4,9 @@ import SwiftUI
 
 struct PanelOfReactionsToThePostView: View {
     var body: some View {
+        
         HStack(spacing: 5) {
+            
             Button(action: {}) {
                 Image.heartSystem
                     .font(.system(size: 20, weight: .bold, design: .default))
@@ -15,6 +17,7 @@ struct PanelOfReactionsToThePostView: View {
             .buttonStyle(.plain)
             
             NavigationLink(destination: CommentsView()) {
+                
                 Image.messageSystem
                     .font(.system(size: 20, weight: .bold, design: .default))
                     .foregroundColor(.black)
@@ -24,6 +27,7 @@ struct PanelOfReactionsToThePostView: View {
             .buttonStyle(.plain)
             
             NavigationLink(destination: DirectView()) {
+                
                 Image.paperplaneSystem
                     .font(.system(size: 20, weight: .bold, design: .default))
                     .foregroundColor(.black)

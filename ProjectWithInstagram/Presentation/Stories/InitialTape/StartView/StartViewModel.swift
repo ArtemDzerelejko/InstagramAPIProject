@@ -13,6 +13,7 @@ final class StartViewModel: ObservableObject {
     private let feedUseCase = FeedUseCase()
     
     func uploadingDataForInstagramFeed() {
+        
         isLoading = true
         feedUseCase.creatingRequestToTheServerToGetInstagramData()
             .receive(on: DispatchQueue.main)
@@ -23,13 +24,14 @@ final class StartViewModel: ObservableObject {
                     self?.isError = true
                     self?.isLoading = false
                 }
-            } receiveValue: { [weak self] result in
-                self?.apiResult = result
-                self?.isLoading = false
-                guard let fetchedPosts = result.data else { return }
-                self?.posts = fetchedPosts
             }
-            .store(in: &cancellables)
+    receiveValue: { [weak self] result in
+        self?.apiResult = result
+        self?.isLoading = false
+        guard let fetchedPosts = result.data else { return }
+        self?.posts = fetchedPosts
+    }
+    .store(in: &cancellables)
     }
     
     func likeButtonTapped(for post: DataObject) {}

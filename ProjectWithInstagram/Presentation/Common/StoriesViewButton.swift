@@ -5,12 +5,12 @@ struct StoriesViewButton: View {
     
     let action: () -> Void
     @State var strokeColor: Color = .red
-    var widthFrame: CGFloat = 20
-    var heightFrame: CGFloat = 20
+    @State var widthFrame: CGFloat = 20
+    @State var heightFrame: CGFloat = 20
     @State var backgroundColor: Color = .lightGray
     @State var pictureToDisplayInsideButton = "person.fill"
     @State var foregroundColor: Color = .white
-    var strokeLineWidth: CGFloat = 2
+    @State var strokeLineWidth: CGFloat = 2
     @State var textBelowTheButton = ""
     @State var showSecond = false
     

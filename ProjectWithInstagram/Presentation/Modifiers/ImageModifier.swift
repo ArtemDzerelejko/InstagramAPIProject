@@ -2,16 +2,15 @@
 import Foundation
 import SwiftUI
 
-
 struct ImageModifiers: ViewModifier {
-    var aspectRatio: ContentMode?
-    var width: CGFloat?
-    var height: CGFloat?
-    var paddingEdges: Edge.Set?
-    var paddingLength: CGFloat?
-    var size: CGFloat?
-    var weight: Font.Weight?
-    var design: Font.Design?
+    @State var aspectRatio: ContentMode?
+    @State var width: CGFloat?
+    @State var height: CGFloat?
+    @State var paddingEdges: Edge.Set?
+    @State var paddingLength: CGFloat?
+    @State var size: CGFloat?
+    @State var weight: Font.Weight?
+    @State var design: Font.Design?
     
     func body(content: Content) -> some View {
         content
@@ -19,7 +18,7 @@ struct ImageModifiers: ViewModifier {
             .frame(width: width, height: height)
             .padding(paddingEdges ?? .horizontal, paddingLength)
             .font(.system(size: size ?? 17, weight: weight, design: design))
-           
+        
     }
 }
 

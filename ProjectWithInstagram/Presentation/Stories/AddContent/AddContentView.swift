@@ -9,9 +9,11 @@ struct AddContentView: View {
         NavigationView {
             
             ZStack {
+                
                 Color.black.ignoresSafeArea()
                 
                 VStack {
+                    
                     NavigationBarView()
                     ContentView()
                 }
@@ -56,13 +58,13 @@ private struct NavigationBarView: View {
 }
 
 private struct ContentView: View {
-    let columns = [
+    private let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
         GridItem(.flexible())
     ]
     @StateObject private var addContentViewModel = AddContentViewModel()
-    let imageDimension = UIScreen.main.bounds.width / 3
+    private let imageDimension = UIScreen.main.bounds.width / 3
     
     var body: some View {
         VStack {
@@ -104,6 +106,7 @@ private struct NavigationButtonsWhenAddingNewPost: View {
     @State private var showGalleryPicker = false
     @State private var showCameraPicker = false
     var body: some View {
+        
         HStack {
             
             Button(action: {}) {

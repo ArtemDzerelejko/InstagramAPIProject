@@ -6,7 +6,6 @@ struct StartView: View {
     @ObservedObject var startViewModel = StartViewModel()
     @State private var isLoading = false
     
-    
     var body: some View {
         
         NavigationView {
@@ -31,12 +30,13 @@ struct StartView: View {
         PostView(startViewModel: startViewModel)
     }
     
-    
 }
 
 private struct HeaderView: View  {
     var body: some View {
+        
         HStack {
+            
             Button(action: {}) {
                 Text(Strings.instagramTitle)
                 
@@ -84,7 +84,9 @@ private struct PostRowView: View {
     let post: DataObject
     
     var body: some View {
+        
         VStack(alignment: .leading) {
+            
             AvatarAndUsernameView()
             AsyncImage(url: URL(string: post.media_url ?? "")) { image in
                 image.resizable()
