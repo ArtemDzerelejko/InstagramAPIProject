@@ -20,35 +20,29 @@ class APIService {
     
     let urlSession = URLSession(configuration: .default)
     
-    func creatingURLToRetrieveData() -> URL? {
-        
-        let urlString = "https://graph.instagram.com/me/media"
+    private func createURLComponents(withPath path: String) -> URLComponents? {
+        let urlString = "https://graph.instagram.com" + path
         
         guard let url = URL(string: urlString) else {
             return nil
         }
         
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        
         components?.queryItems = [
             URLQueryItem(name: Constants.fieldsURLQueryItem,
                          value: Keys.allCases.map({ $0.rawValue }).joined(separator: ",")),
             URLQueryItem(name: Constants.accessTokenURLQueryItem, value: Constants.accessToken)
         ]
         
-        return components?.url
+        return components
     }
     
-    func creatingURLToRetrieveDataAccordingToTheTag (with tag: String) -> URL? {
-        
-        let urlString = "https://graph.instagram.com/me/media"
-        
-        guard let url = URL(string: urlString) else {
-            return nil
-        }
-        
-        var components = URLComponents(url: url, resolvingAgainstBaseURL: true)
-        
+    func creatingURLToRetrieveData() -> URL? {
+        return createURLComponents(withPath: "/me/media")?.url
+    }
+    
+    func creatingURLToRetrieveDataAccordingToTheTag(with tag: String) -> URL? {
+        var components = createURLComponents(withPath: "me/media")
         components?.queryItems?.append(URLQueryItem(name: "tag", value: tag))
         
         return components?.url
